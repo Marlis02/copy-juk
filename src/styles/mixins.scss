@@ -1,0 +1,40 @@
+@mixin centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexbox($justifyContent, $alignItems) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+// media
+@mixin devices($breakpoint) {
+  @if $breakpoint==xll {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  } @else if $breakpoint==xl {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint==lg {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  } @else if $breakpoint==md {
+    @media (max-width: 834px) {
+      @content;
+    }
+  } @else if $breakpoint==sm {
+    @media (max-width: 550px) {
+      @content;
+    }
+  } @else if $breakpoint==xs {
+    @media (max-width: 376px) {
+      @content;
+    }
+  }
+}

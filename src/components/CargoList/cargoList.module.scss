@@ -1,0 +1,219 @@
+@import '/src/styles/mixins.scss';
+
+.listConScroll::-webkit-scrollbar {
+  border-radius: 5px;
+  width: 6px;
+}
+
+.listConScroll::-webkit-scrollbar-track {
+  width: 4px;
+  border-radius: 4px;
+  background-color: var(--color-grey);
+}
+
+.listConScroll::-webkit-scrollbar-thumb {
+  background: var(--color-brown);
+  border-radius: 4px;
+}
+
+.con {
+  width: 100%;
+  @include centered;
+  flex-direction: column;
+  border-radius: 16px;
+
+  .listInfo {
+    width: 90%;
+    height: 100px;
+    @include flexbox(space-between, center);
+    margin-bottom: 20px;
+    @media (max-width: 650px) {
+      @include flexbox(center, flex-start);
+      gap: 40px;
+      flex-direction: column;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      text-align: center;
+    }
+    .filterList {
+      @include centered;
+      @media (max-width: 650px) {
+        width: 100%;
+        @include flexbox(flex-end, center);
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--color-dark-grey);
+        @include centered;
+        @include devices(sm) {
+          letter-spacing: 1px;
+        }
+      }
+      select {
+        border: none;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      option {
+        font-size: 20px;
+        @include devices(sm) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .list_btns {
+    width: 90%;
+    height: 100%;
+    /* border: 1px solid red; */
+    margin-bottom: 60px;
+    @include flexbox(flex-start, center);
+
+    gap: 24px;
+    @include devices(sm) {
+      margin-bottom: 30px;
+      gap: 15px;
+    }
+    button {
+      width: 150px;
+      height: 48px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      @include devices(lg) {
+        width: 130px;
+        height: 44px;
+        font-size: 16px;
+      }
+      @include devices(md) {
+        width: 105px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      &:nth-child(1) {
+        background-color: var(--color-brown);
+        color: var(--color-light);
+        box-shadow: 2px 2px 6px 0px #00000040;
+      }
+      &:nth-child(2) {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+        box-shadow: 2px 2px 6px 0px #00000040;
+      }
+    }
+  }
+}
+
+.listConScroll {
+  width: 92%;
+  @include centered;
+  overflow: scroll;
+  overflow-x: hidden;
+  border-radius: 20px;
+}
+
+.listCon {
+  width: 98%;
+  height: 600px;
+  display: grid;
+  gap: 20px;
+  @include devices(md) {
+    gap: 10px;
+  }
+}
+
+.listTitle {
+  background-color: var(--color-brown);
+  color: var(--color-light);
+  width: 100%;
+  height: 65px;
+  border-collapse: collapse;
+  border-radius: 16px 16px 0 0;
+  display: grid;
+  // border: 1px solid grey;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  @include devices(lg) {
+    height: 50px;
+  }
+  @include devices(md) {
+    height: 30px;
+  }
+
+  .listTitleItem {
+    @include flexbox(flex-start, center);
+    padding-left: 20px;
+    font-size: 22px;
+    font-weight: 400;
+    @include devices(xl) {
+      display: none;
+    }
+  }
+}
+
+.listValue {
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  &:nth-child(odd) {
+    background-color: #f8f8f8;
+    border-radius: 16px;
+  }
+  @include devices(lg) {
+    grid-template-columns: 3fr 2fr;
+    height: 126px;
+  }
+  @include devices(md) {
+    grid-template-columns: 3fr 2fr;
+    justify-items: center;
+    height: 110px;
+  }
+  @include devices(sm) {
+    grid-template-columns: 3fr 1fr;
+    height: 120px;
+  }
+  .item {
+    @include flexbox(flex-start, center);
+    padding-left: 20px;
+    font-size: 16px;
+    @include devices(lg) {
+      display: none;
+    }
+    @include devices(lg) {
+      font-size: 14px;
+    }
+  }
+  .item2__con {
+    @include flexbox(center, flex-start);
+    flex-direction: column;
+  }
+  .item3__con {
+    @include flexbox(flex-start, center);
+    @include devices(sm) {
+      @include flexbox(center, flex-start);
+      flex-direction: column;
+    }
+  }
+  .item2 {
+    display: none;
+    font-size: 16px;
+    @include devices(lg) {
+      @include flexbox(flex-start, center);
+      padding: 0 10px;
+    }
+    @include devices(md) {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'inter' sans-serif;
+}
+
+:root {
+  /* colors */
+  --color-dark: #19191b;
+  --color-light: #fcfcfc;
+  --color-blue: #3498db;
+  --color-grey: #c7c7c7;
+  --color-dark-grey: #696871;
+  --color-brown: #8c6348;
+  /* transition */
+  --tran2: all 0.2 ease;
+  --tran3: all 0.3 ease;
+  --tran4: all 0.4 ease;
+  --tran5: all 0.5 ease;
+}
+
+//======================mixins======================
+body {
+  background-color: var(--color-light);
+}

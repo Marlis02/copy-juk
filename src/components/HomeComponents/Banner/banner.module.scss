@@ -1,0 +1,240 @@
+@import '/src/styles/mixins.scss';
+
+.con {
+  width: 100%;
+  height: 970px;
+  position: relative;
+  // border-bottom: 1px solid grey;
+  @include flexbox(center, flex-start);
+  @include devices(xl) {
+    height: 900px;
+  }
+  @include devices(lg) {
+    height: 780px;
+  }
+  @include devices(md) {
+    height: 620px;
+  }
+}
+.pages_wrapper {
+  width: 100%;
+  height: 780px;
+  @include devices(xl) {
+    height: 900px;
+  }
+  @include devices(lg) {
+    height: 740px;
+  }
+  @include devices(md) {
+    height: 620px;
+  }
+  .pages {
+    width: 100%;
+    height: 800px;
+    @include devices(xl) {
+      height: 900px;
+    }
+    @include devices(lg) {
+      height: 740px;
+    }
+    @include devices(md) {
+      height: 620px;
+    }
+    .banner {
+      width: 100%;
+      height: 800px;
+      @include devices(xl) {
+        height: 720px;
+      }
+      @include devices(lg) {
+        height: 600px;
+      }
+      @include devices(md) {
+        height: 450px;
+      }
+    }
+  }
+}
+
+#page1 {
+  width: 100%;
+  position: relative;
+  .text1 {
+    z-index: 1;
+    width: 60%;
+    height: 250px;
+    // border: 1px solid red;
+    position: absolute;
+    top: 25%;
+    @include devices(lg) {
+      top: 15%;
+    }
+    @include devices(md) {
+      top: 10%;
+    }
+    @include devices(sm) {
+      width: 80%;
+    }
+    .banner__dot {
+      position: absolute;
+      left: 4%;
+    }
+    .banner__text1 {
+      position: absolute;
+      font-size: 28px;
+      top: 20%;
+      left: 10%;
+      color: var(--color-light);
+      width: 85%;
+      p {
+        font-size: 60px;
+        margin-bottom: 20px;
+        @include devices(xl) {
+          font-size: 50px;
+        }
+        @include devices(lg) {
+          font-size: 45px;
+        }
+        @include devices(md) {
+          font-size: 26px;
+          margin-bottom: 15px;
+        }
+        @include devices(sm) {
+          margin-bottom: 10px;
+        }
+      }
+      @include devices(xl) {
+        left: 12%;
+        top: 18%;
+        font-size: 24px;
+      }
+      @include devices(lg) {
+        top: 16%;
+      }
+      @include devices(md) {
+        left: 15%;
+        top: 20%;
+        font-size: 16px;
+      }
+      @media (max-width: 670px) {
+        left: 18%;
+      }
+      @include devices(sm) {
+        left: 18%;
+        font-size: 14px;
+      }
+      @media (max-width: 450px) {
+        left: 20%;
+      }
+      @include devices(xs) {
+        left: 22%;
+      }
+    }
+  }
+}
+
+.pagin_con {
+  position: absolute;
+  bottom: 24%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 30px;
+
+  @include centered;
+  @include devices(xl) {
+    bottom: 23.5%;
+  }
+  @include devices(lg) {
+    bottom: 26%;
+  }
+  @include devices(md) {
+    bottom: 35%;
+  }
+  @include devices(sm) {
+    bottom: 33%;
+  }
+  .activ_pagin {
+    width: 73px;
+    height: 6px;
+    background-color: var(--color-light);
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 5px;
+    @include devices(md) {
+      width: 52px;
+    }
+  }
+  .pagin {
+    width: 30px;
+    height: 6px;
+    background-color: var(--color-grey);
+    border-radius: 3px;
+    margin: 0 5px;
+    cursor: pointer;
+
+    @include devices(md) {
+      width: 24px;
+    }
+  }
+}
+
+.img__con {
+  width: 90%;
+  @include centered;
+  position: absolute;
+  bottom: 10px;
+
+  left: 50%;
+  transform: translateX(-50%);
+  @include devices(xl) {
+    width: 98%;
+  }
+  .img {
+    height: 180px;
+    &:nth-child(1) {
+      width: 20%;
+
+      @include devices(sm) {
+        display: none;
+      }
+    }
+    &:nth-child(2) {
+      width: 30%;
+      height: 194px;
+      @include devices(sm) {
+        width: 50%;
+        height: 170px;
+      }
+      @include devices(sm) {
+        width: 50%;
+        height: 170px;
+      }
+    }
+    &:nth-child(3) {
+      width: 30%;
+      height: 194px;
+      @include devices(sm) {
+        width: 50%;
+        height: 170px;
+      }
+      @include devices(xs) {
+        width: 50%;
+        height: 170px;
+      }
+    }
+    &:nth-child(4) {
+      width: 20%;
+      height: 180px;
+      @include devices(sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+.img__con {
+  @include devices(lg) {
+    width: 100%;
+  }
+}

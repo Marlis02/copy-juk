@@ -1,0 +1,178 @@
+@import '/src/styles/mixins.scss';
+.con {
+  width: 100%;
+  @include centered;
+  flex-direction: column;
+}
+.con1 {
+  width: 90%;
+  @include centered;
+  @include devices(lg) {
+    gap: 20px;
+  }
+}
+
+.item {
+  height: 630px;
+  background-color: var(--color-light);
+  width: 33.3%;
+  @include centered;
+  @include devices(xl) {
+    height: 580px;
+  }
+  @include devices(lg) {
+    width: 49%;
+    height: 570px;
+    box-shadow: 4px 4px 24px 0px #00000040;
+    border-radius: 16px;
+  }
+  @include devices(md) {
+    height: 560px;
+  }
+  @media (max-width: 700px) {
+    width: 90%;
+  }
+  @include devices(sm) {
+    width: 100%;
+  }
+  &:nth-child(1) {
+    box-shadow: -3px 3px 24px 0px #00000040;
+    border-radius: 16px 0 0 16px;
+    @include devices(lg) {
+      border-radius: 16px;
+    }
+  }
+  &:nth-child(2) {
+    height: 660px;
+    background-color: var(--color-brown);
+    border-radius: 16px;
+    color: var(--color-light);
+    @include devices(xl) {
+      height: 600px;
+    }
+    @include devices(lg) {
+      display: none;
+    }
+  }
+  &:nth-child(3) {
+    box-shadow: 4px 4px 24px 0px #00000040;
+    border-radius: 0 16px 16px 0;
+    @include devices(lg) {
+      border-radius: 16px;
+    }
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+}
+
+.itemText {
+  width: 70%;
+  height: 70%;
+  @include flexbox(space-between, center);
+  flex-direction: column;
+  text-align: center;
+  @include devices(xl) {
+    width: 80%;
+    height: 80%;
+    @include centered;
+    gap: 30px;
+  }
+  ul {
+    list-style-type: none;
+    @include flexbox(center, flex-start);
+    flex-direction: column;
+    gap: 15px;
+    color: var(--color-dark-grey);
+    .checkmark {
+      color: var(--color-blue);
+      margin-right: 10px;
+    }
+    .lastLi {
+      color: var(--color-dark);
+      margin: 0 auto;
+    }
+  }
+}
+.btn {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 130px;
+  height: 40px;
+  border-radius: 8px;
+  color: var(--color-light);
+  background-color: var(--color-brown);
+}
+.title {
+  font-weight: 700;
+  @include centered;
+  flex-direction: column;
+  gap: 5px;
+  span {
+    &:nth-child(2) {
+      font-size: 14px;
+    }
+  }
+}
+.price {
+  @include centered;
+  gap: 10px;
+  .priceItem1 {
+    sup {
+      vertical-align: top;
+      font-size: 16px;
+    }
+    .price0 {
+      font-size: 58px;
+      font-weight: 700;
+    }
+  }
+  .priceItem2 {
+    @include flexbox(center, flex-start);
+    gap: 10px;
+    flex-direction: column;
+    span {
+      font-size: 16px;
+    }
+  }
+}
+
+.itemText2 {
+  width: 70%;
+  height: 70%;
+  @include flexbox(space-between, center);
+  flex-direction: column;
+  text-align: center;
+  color: var(--color-light);
+  @include devices(xl) {
+    width: 80%;
+    height: 90%;
+    @include centered;
+    gap: 40px;
+  }
+  .btn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 130px;
+    height: 40px;
+    border-radius: 8px;
+    color: var(--color-brown);
+    background-color: var(--color-light);
+  }
+  ul {
+    list-style-type: none;
+    @include flexbox(center, flex-start);
+    flex-direction: column;
+    gap: 15px;
+    .checkmark {
+      margin-right: 10px;
+    }
+
+    .lastLi {
+      margin: 0 auto;
+      font-weight: 300;
+    }
+  }
+}
