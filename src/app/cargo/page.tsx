@@ -5,40 +5,15 @@ import styles from './cargo.module.scss'
 import React, { useEffect, useState } from 'react'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
 import ReactSelect from 'react-select'
-
-type IInputs = {
-  fromCountry: string
-  toCountry: string
-  fromArea: string
-  toArea: string
-  fromCity: string
-  toCity: string
-  fromMass: string
-  toMass: string
-  typeTransport: string
-  fromDate: string
-  toDate: string
-  fromVolime: string
-  toVolime: string
-  typeShipment: string
-}
-interface ICountries {
-  label: string
-  value: string
-}
-const countries: ICountries[] = [
-  { label: 'USA', value: 'usa' },
-  { label: 'India', value: 'India' },
-  { label: 'China', value: 'China' },
-  { label: 'Finland', value: 'Finland' },
-]
+import { ICargoInputs } from '@/types/cargo.types'
+import { cargoCountries } from '@/data/cargo.data'
 
 const Cargo = () => {
   const [isMounted, setIsMounted] = useState(false) // fix error version
 
   useEffect(() => setIsMounted(true), [])
-  const { handleSubmit, control } = useForm<IInputs>()
-  const onSubmit: SubmitHandler<IInputs> = (data) => console.log(data)
+  const { handleSubmit, control } = useForm<ICargoInputs>()
+  const onSubmit: SubmitHandler<ICargoInputs> = (data) => console.log(data)
   return (
     <div className={styles.cargoCon}>
       <h3 className={styles.title}>Найти груз</h3>
@@ -55,8 +30,8 @@ const Cargo = () => {
                     <ReactSelect
                       className={styles.inp1}
                       placeholder="Страна, город "
-                      options={countries}
-                      value={countries.find((c) => c.value === value)}
+                      options={cargoCountries}
+                      value={cargoCountries.find((c) => c.value === value)}
                       onChange={(val) => onChange(val ? val.value : '')} // Добавлена проверка на val
                     />
                   )}
@@ -167,8 +142,8 @@ const Cargo = () => {
                     <ReactSelect
                       className={styles.inp7}
                       placeholder="Страна, город "
-                      options={countries}
-                      value={countries.find((c) => c.value === value)}
+                      options={cargoCountries}
+                      value={cargoCountries.find((c) => c.value === value)}
                       onChange={(val) => onChange(val ? val.value : '')} // Добавлена проверка на val
                     />
                   )}
@@ -237,8 +212,8 @@ const Cargo = () => {
                     <ReactSelect
                       className={styles.inp11}
                       placeholder="Все виды погрузки"
-                      options={countries}
-                      value={countries.find((c) => c.value === value)}
+                      options={cargoCountries}
+                      value={cargoCountries.find((c) => c.value === value)}
                       onChange={(val) => onChange(val ? val.value : '')} // Добавлена проверка на val
                     />
                   )}

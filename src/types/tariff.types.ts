@@ -1,4 +1,6 @@
-export interface ITariffFree {
+// home Tariff
+
+export interface IHomeTariffFree {
   title: string
   month: string
   currency: string
@@ -8,18 +10,19 @@ export interface ITariffFree {
   text: string
 }
 
-export interface TariffFeature {
+export interface IHomeTariffFeature {
   item: string
 }
 
-export interface ITariffEnterprise {
+export interface IHomeTariffEnterprise {
   title: string
   price: number
   currency: string
   perUser: string
   perMonth: string
   text: string
-  features: TariffFeature[]
+  features: IHomeTariffFeature[]
   billing: string
   link: string
 }
+//-------------------------------------------

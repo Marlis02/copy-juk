@@ -4,20 +4,8 @@ import styles from './navbar.module.scss'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { navItems } from '@/data/navigation.links'
 
-interface INavItem {
-  title: string
-  href: string
-}
-
-const navItems: INavItem[] = [
-  { title: 'Главное', href: '/' },
-  { title: 'Груз', href: '/cargo' },
-  { title: 'Машины', href: '/cars' },
-  { title: 'Новости', href: '/news' },
-  { title: 'Тариф', href: '/tariff' },
-  { title: 'Контакты', href: '/contacts' },
-]
 const Navbar = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)

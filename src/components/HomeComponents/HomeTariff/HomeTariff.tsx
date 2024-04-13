@@ -1,60 +1,12 @@
 import Link from 'next/link'
 import styles from './homeTariff.module.scss'
-import { ITariffEnterprise } from './ITariff'
-
-const TariffEnterprise: ITariffEnterprise[] = [
-  {
-    title: 'ENTERPRISE',
-    price: 49,
-    currency: '$',
-    perUser: 'per user',
-    perMonth: 'per month',
-    text: 'All the features you need to keep your personal files safe, accessible, and easy to share.',
-    features: [
-      { item: '2 GB of hosting space' },
-      { item: '14 days of free backups' },
-      { item: 'Social integrations' },
-    ],
-    billing: 'Advanced client billing',
-    link: '/tariff',
-  },
-  {
-    title: 'ENTERPRISE',
-    price: 49,
-    currency: '$',
-    perUser: 'per user',
-    perMonth: 'per month',
-    text: 'All the features you need to keep your personal files safe, accessible, and easy to share.',
-    features: [
-      { item: '2 GB of hosting space' },
-      { item: '14 days of free backups' },
-      { item: 'Social integrations' },
-    ],
-    billing: 'Advanced client billing',
-    link: '/tariff',
-  },
-  {
-    title: 'ENTERPRISE',
-    price: 49,
-    currency: '$',
-    perUser: 'per user',
-    perMonth: 'per month',
-    text: 'All the features you need to keep your personal files safe, accessible, and easy to share.',
-    features: [
-      { item: '2 GB of hosting space' },
-      { item: '14 days of free backups' },
-      { item: 'Social integrations' },
-    ],
-    billing: 'Advanced client billing',
-    link: '/tariff',
-  },
-]
+import { HomeTariffEnterprise } from '@/data/tariff.data'
 
 const HomeTariff = () => {
   return (
     <div className={styles.con}>
       <div className={styles.con1}>
-        {TariffEnterprise.map(
+        {HomeTariffEnterprise.map(
           (
             {
               title,

@@ -2,85 +2,8 @@
 
 import { useState } from 'react'
 import styles from './cargoList.module.scss'
-
-interface ICargo {
-  direction: string
-  route: string
-  date: string
-  cargo: string
-  cost: string
-}
-
-interface CargoProps {
-  isCargo: boolean
-  isCar: boolean
-}
-
-const cargoData: ICargo[] = [
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '24.03.21',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '26.12.21',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '23.03.23',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '23.03.24',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '13.05.21',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '20.03.21',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '23.03.21',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '23.03.21',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '23.03.21',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-]
+import { CargoProps } from '@/types/cargo.types'
+import { cargoData } from '@/data/cargo.data'
 
 const CargoList = ({ isCargo, isCar }: CargoProps) => {
   const [filterList, setFilterList] = useState<string>('')

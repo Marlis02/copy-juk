@@ -1,0 +1,77 @@
+@import '/src/styles/mixins.scss';
+.con {
+  width: 100%;
+  @include centered;
+  margin-top: 50px;
+}
+
+.contacts_info {
+  width: 90%;
+  @include centered;
+  flex-direction: column;
+  gap: 60px;
+  @include devices(sm) {
+    gap: 40px;
+  }
+}
+
+.contacts_text {
+  @include flexbox(center, flex-start);
+  flex-direction: column;
+  gap: 30px;
+  @include devices(sm) {
+    gap: 20px;
+  }
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+    @include devices(sm) {
+      font-size: 26px;
+    }
+  }
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    @include devices(sm) {
+      font-size: 18px;
+    }
+  }
+}
+
+.contacts_links {
+  width: 100%;
+  @include flexbox(center, flex-start);
+  flex-direction: column;
+  gap: 20px;
+  @include devices(sm) {
+    gap: 10px;
+  }
+  img {
+    margin-right: 10px;
+  }
+  p {
+    @include centered;
+    font-size: 20px;
+    font-weight: 600;
+    @include devices(sm) {
+      font-size: 18px;
+    }
+  }
+  span {
+    margin-left: 10px;
+    font-weight: 400;
+  }
+}
+
+.sos_icons {
+  width: 107px;
+  height: 24px;
+  margin-left: 5px;
+  @include flexbox(space-between, center);
+
+  a {
+    width: 25px;
+    height: 25px;
+    @include centered;
+  }
+}
