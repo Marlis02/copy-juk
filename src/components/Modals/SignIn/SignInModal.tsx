@@ -56,16 +56,20 @@ const SignInModal = ({ active, setActive }: any) => {
                   placeholder="Пароль"
                   className={styles.inp}
                 />
-                <button onClick={togglePasswordVisibility}>
+                <button
+                  type="button"
+                  className={styles.eyeBtn}
+                  onClick={togglePasswordVisibility}
+                >
                   {showPassword ? (
-                    <img
+                    <Image
                       src="/icons/closeEye.svg"
                       alt="eye"
                       width={20}
                       height={20}
                     />
                   ) : (
-                    <img
+                    <Image
                       src="/icons/openEye.svg"
                       alt="eye"
                       width={20}
