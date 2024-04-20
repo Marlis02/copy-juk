@@ -170,6 +170,9 @@
     @media (max-width: 400px) {
       width: 55%;
     }
+    a {
+      @include centered;
+    }
   }
 }
 .navModal {

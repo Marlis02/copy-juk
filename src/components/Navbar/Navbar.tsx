@@ -5,10 +5,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { navItems } from '@/data/navigation.links'
+import SignInModal from '../Modals/SignIn/SignInModal'
 
 const Navbar = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+  const [loginModal, setLoginModal] = useState<boolean>(false)
 
   const togglePopup = () => {
     setIsOpen(!isOpen)
@@ -60,9 +62,14 @@ const Navbar = () => {
           })}
         </div>
         <div className={styles.nav_btns}>
-          <button type="button" className={styles.btn}>
+          <button
+            type="button"
+            onClick={() => setLoginModal(true)}
+            className={styles.btn}
+          >
             Вход
           </button>
+          <SignInModal active={loginModal} setActive={setLoginModal} />
           <button type="button" className={styles.btn}>
             <Link href="/signup">Регистрация</Link>
           </button>
@@ -111,7 +118,10 @@ const Navbar = () => {
               />
             </a>
           </div>
-          <Image width={24} height={24} alt="logo2" src="/icons/logout.svg" />
+          <a type="button" onClick={() => setLoginModal(true)}>
+            <Image width={24} height={24} alt="logo2" src="/icons/logout.svg" />
+          </a>
+          <SignInModal active={loginModal} setActive={setLoginModal} />
           <Image
             onClick={togglePopup}
             width={24}
@@ -131,6 +141,7 @@ const Navbar = () => {
                       className={
                         active ? styles.activModalLink : styles.modalLink
                       }
+                      onClick={togglePopup}
                     >
                       {link.title}
                     </Link>

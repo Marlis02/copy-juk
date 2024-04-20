@@ -1,0 +1,151 @@
+@import '/src/styles/mixins.scss';
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error {
+  width: 100%;
+  text-align: start;
+  color: red;
+  font-size: 10px;
+}
+
+.modalCon {
+  display: none;
+}
+
+.modalConActive {
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  background: #00000057;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.formCon {
+  width: 640px;
+  height: 450px;
+  background-color: var(--color-light);
+  @include centered;
+  border-radius: 16px;
+  animation: fadeIn 0.3s ease-in-out forwards; /* apply the animation */
+  form {
+    @include flexbox(flex-start, flex-start);
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+    .formTitle {
+      font-size: 32px;
+      font-weight: 700;
+    }
+  }
+  @include devices(md) {
+    width: 540px;
+  }
+  @media (max-width: 630px) {
+    width: 400px;
+  }
+  @include devices(sm) {
+    width: 340px;
+    height: 460px;
+  }
+  @include devices(xs) {
+    width: 300px;
+    height: 490px;
+  }
+}
+.inp {
+  width: calc(100% - 20px);
+  height: 44px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-grey);
+  font-size: 16px;
+}
+
+.emailCon {
+  margin: 20px 0 20px 0;
+  height: 80px;
+  @include flexbox(space-between, center);
+  flex-direction: column;
+  width: 100%;
+  p {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+.passwordCon {
+  width: 100%;
+  position: relative;
+
+  height: 110px;
+  @include flexbox(space-between, center);
+  flex-direction: column;
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    &:last-child {
+      text-align: end;
+      color: #000000b2;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+  button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 3%;
+    top: 41%;
+    cursor: pointer;
+  }
+}
+
+.signInBtn {
+  width: 125px;
+  height: 60px;
+  background-color: var(--color-brown);
+  border-radius: 8px;
+  border: none;
+  color: var(--color-light);
+  font-size: 20px;
+  font-weight: 500;
+  margin: 30px 0 30px 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.register {
+  width: 100%;
+  @include centered;
+  gap: 20px;
+  color: #000000b2;
+  font-size: 18px;
+  font-weight: 500;
+  @include devices(sm) {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: var(--color-brown);
+  }
+  @include devices(sm) {
+    flex-direction: column;
+  }
+}
