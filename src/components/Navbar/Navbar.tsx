@@ -125,7 +125,7 @@ const Navbar = () => {
             <Image width={24} height={24} alt="logo2" src="/icons/logout.svg" />
           </a>
           <Modal setActive={setLoginModal} active={loginModal}>
-            <SignInModal />
+            <SignInModal setAct={setLoginModal} />
           </Modal>
           <Image
             onClick={togglePopup}
