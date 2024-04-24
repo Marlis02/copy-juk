@@ -31,11 +31,11 @@
 
 .emailCon {
   margin: 20px 0 20px 0;
-  height: 80px;
-  @include flexbox(space-between, center);
+  @include centered;
   flex-direction: column;
   width: 100%;
   p {
+    margin: 0 0 10px 0;
     width: 100%;
     font-size: 18px;
     font-weight: 500;
@@ -44,19 +44,19 @@
 .passwordCon {
   width: 100%;
   position: relative;
-
-  height: 110px;
-  @include flexbox(space-between, center);
+  @include centered;
   flex-direction: column;
   p {
     font-size: 18px;
     font-weight: 500;
     width: 100%;
+    margin: 0 0 10px 0;
     &:last-child {
       text-align: end;
       color: #000000b2;
       font-size: 16px;
       cursor: pointer;
+      margin: 10px 0;
     }
   }
   .eyeBtn {
@@ -66,8 +66,11 @@
     height: 20px;
     position: absolute;
     right: 3%;
-    top: 41%;
+    top: 39%;
     cursor: pointer;
+    @include devices(sm) {
+      top: 38%;
+    }
   }
 }
 
@@ -105,8 +108,8 @@
 }
 
 .error {
-  width: 100%;
+  width: 99%;
   text-align: start;
   color: red;
-  font-size: 10px;
+  font-size: 14px;
 }

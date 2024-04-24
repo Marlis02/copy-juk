@@ -1,10 +1,12 @@
 'use client'
-import React, { useState, useRef, createRef, useEffect } from 'react'
+import React, { useState, createRef, useEffect } from 'react'
 import styles from './passRecov.module.scss'
+import { useRouter } from 'next/navigation'
 
 const ConfirmCode = () => {
   const [code, setCode] = useState(['', '', '', ''])
   const [seconds, setSeconds] = useState(60)
+  const router = useRouter()
   const inputRefs: any = Array(4)
     .fill(0)
     .map((_, i) => createRef())
@@ -31,7 +33,13 @@ const ConfirmCode = () => {
 
   const handleSubmit = () => {
     let confirmCode = code.join('')
-    alert(confirmCode)
+
+    if (confirmCode.length < 4) {
+      alert('Заполните код')
+    } else {
+      alert(confirmCode)
+      router.push('/forgot-password/new-pass')
+    }
   }
 
   useEffect(() => {
@@ -68,10 +76,15 @@ const ConfirmCode = () => {
           />
         ))}
       </div>
-      <p className={styles.timer}>Отправить заново {seconds}</p>
+      <p className={styles.timer}>
+        Отправить заново <span>{seconds}s</span>
+      </p>
       <button className={styles.btn} onClick={handleSubmit}>
         Продолжить
       </button>
+      {/* <Modal active={newPass} setActive={setNewPass} id={'newPass'}>
+        <NewPassword />
+      </Modal> */}
     </div>
   )
 }

@@ -5,19 +5,27 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { ISignInFields } from '@/types/auth.types'
 import Image from 'next/image'
 import Link from 'next/link'
-import ConfirmEmail from '../PasswordRecovery/СonfirmEmail'
+import { useRouter } from 'next/navigation'
 import Modal from '../Modal'
 
-const SignInModal = () => {
-  const { handleSubmit, control, reset } = useForm<ISignInFields>()
+const SignInModal = ({ setAct }: any) => {
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm<ISignInFields>()
   const [showPassword, setShowPassword] = useState(false)
-  const [confirmEmail, setConfirmEamil] = useState(false)
+  const [modalActive, setModalActive] = useState(false)
+  const router = useRouter()
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword)
   }
   const onSubmit: SubmitHandler<ISignInFields> = (data) => {
     alert(data.email + ', pass :' + data.password)
     reset()
+    router.push('/')
+    setAct(false)
   }
 
   return (
@@ -27,7 +35,9 @@ const SignInModal = () => {
         <Controller
           name="email"
           control={control}
-          rules={{ required: true }}
+          rules={{
+            required: 'Email is required',
+          }}
           defaultValue=""
           render={({ field }) => (
             <div className={styles.emailCon}>
@@ -38,6 +48,9 @@ const SignInModal = () => {
                 placeholder="Email"
                 className={styles.inp}
               />
+              {errors.email && (
+                <span className={styles.error}>{errors.email.message}</span>
+              )}
             </div>
           )}
         />
@@ -45,7 +58,7 @@ const SignInModal = () => {
           name="password"
           control={control}
           defaultValue=""
-          rules={{ required: true }}
+          rules={{ required: 'Password is required' }}
           render={({ field }) => (
             <div className={styles.passwordCon}>
               <p>Введите пароль:</p>
@@ -55,6 +68,9 @@ const SignInModal = () => {
                 placeholder="Пароль"
                 className={styles.inp}
               />
+              {errors.password && (
+                <span className={styles.error}>{errors.password.message}</span>
+              )}
               <button
                 type="button"
                 className={styles.eyeBtn}
@@ -76,15 +92,19 @@ const SignInModal = () => {
                   />
                 )}
               </button>
-              <p onClick={() => setConfirmEamil(true)}>Забыли пароль?</p>
-              {/* <Modal active={confirmEmail} setActive={setConfirmEamil}>
-                <ConfirmEmail />
-              </Modal> */}
+              <p
+                onClick={() => {
+                  router.push('/forgot-password')
+                  setAct(false)
+                }}
+              >
+                Забыли пароль?
+              </p>
             </div>
           )}
         />
 
-        <button className={styles.signInBtn} type="submit">
+        <button type="submit" className={styles.signInBtn}>
           Вход
         </button>
         <p className={styles.register}>

@@ -1,10 +1,17 @@
-import { INewPassword } from '@/types/auth.types'
+'use client'
 import React from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import styles from './passRecov.module.scss'
+import { INewPassword } from '@/types/auth.types'
 
 const NewPassword = () => {
-  const { handleSubmit, control } = useForm<INewPassword>()
+  const {
+    handleSubmit,
+    control,
+    watch,
+    formState: { errors },
+  } = useForm<INewPassword>()
+  const pwd = watch('newPassword')
 
   const onSubmit: SubmitHandler<INewPassword> = (data) => {
     alert(data.confirmNewPassword + ' ' + data.newPassword)
@@ -16,7 +23,9 @@ const NewPassword = () => {
         <Controller
           name="newPassword"
           control={control}
-          rules={{ required: true }}
+          rules={{
+            required: 'Passowrd is required',
+          }}
           defaultValue=""
           render={({ field }) => (
             <div className={styles.emailCon}>
@@ -33,7 +42,10 @@ const NewPassword = () => {
         <Controller
           name="confirmNewPassword"
           control={control}
-          rules={{ required: true }}
+          rules={{
+            required: 'Password is required',
+            validate: (value) => value === pwd || 'Пароли не совпадают',
+          }}
           defaultValue=""
           render={({ field }) => (
             <div className={styles.emailCon}>
@@ -44,6 +56,11 @@ const NewPassword = () => {
                 placeholder="Пароль"
                 className={styles.inp}
               />
+              {errors.confirmNewPassword && (
+                <span className={styles.error}>
+                  {errors.confirmNewPassword.message}
+                </span>
+              )}
             </div>
           )}
         />

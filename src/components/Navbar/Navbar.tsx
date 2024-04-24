@@ -11,7 +11,7 @@ import Modal from '../Modals/Modal'
 const Navbar = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
-  const [loginModal, setLoginModal] = useState<boolean>(false)
+  const [loginModal, setLoginModal] = useState(false)
 
   const togglePopup = () => {
     setIsOpen(!isOpen)
@@ -71,7 +71,7 @@ const Navbar = () => {
             Вход
           </button>
           <Modal setActive={setLoginModal} active={loginModal}>
-            <SignInModal />
+            <SignInModal setAct={setLoginModal} />
           </Modal>
           <button type="button" className={styles.btn}>
             <Link href="/signup">Регистрация</Link>

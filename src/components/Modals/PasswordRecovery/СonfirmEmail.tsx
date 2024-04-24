@@ -1,10 +1,14 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './passRecov.module.scss'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { IConfirmEmail } from '@/types/auth.types'
+import Modal from '../Modal'
+import ConfirmCode from './СonfirmСode'
+import { useRouter } from 'next/navigation'
 
-const ConfirmEmail = ({ active, setActive }: any) => {
+const ConfirmEmail = () => {
+  const router = useRouter()
   const { handleSubmit, control } = useForm<IConfirmEmail>()
 
   const onSubmit: SubmitHandler<IConfirmEmail> = (data) => {
@@ -33,7 +37,12 @@ const ConfirmEmail = ({ active, setActive }: any) => {
             </div>
           )}
         />
-        <button className={styles.btn}>Продолжить</button>
+        <button
+          className={styles.btn}
+          onClick={() => router.push('/forgot-password/confirm-code')}
+        >
+          Продолжить
+        </button>
       </form>
     </>
   )

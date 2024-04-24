@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './modal.module.scss'
 
 const Modal = ({ active, setActive, children }: any) => {
