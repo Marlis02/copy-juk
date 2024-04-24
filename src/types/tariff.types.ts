@@ -1,6 +1,7 @@
 // home Tariff
 
 export interface IHomeTariffFree {
+  id: number
   title: string
   month: string
   currency: string
@@ -11,10 +12,12 @@ export interface IHomeTariffFree {
 }
 
 export interface IHomeTariffFeature {
+  id: number
   item: string
 }
 
 export interface IHomeTariffEnterprise {
+  id: number
   title: string
   price: number
   currency: string

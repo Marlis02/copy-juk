@@ -64,7 +64,9 @@ const NewPassword = () => {
             </div>
           )}
         />
-        <button className={styles.btn}>Сохранить</button>
+        <button type="submit" className={styles.btn}>
+          Сохранить
+        </button>
       </form>
     </>
   )

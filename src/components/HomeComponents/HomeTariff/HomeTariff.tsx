@@ -9,6 +9,7 @@ const HomeTariff = () => {
         {HomeTariffEnterprise.map(
           (
             {
+              id,
               title,
               price,
               currency,
@@ -20,7 +21,7 @@ const HomeTariff = () => {
             },
             index,
           ) => (
-            <div className={styles.item} key={index}>
+            <div className={styles.item} key={id}>
               <div className={index === 1 ? styles.itemText2 : styles.itemText}>
                 <p className={styles.title}>{title}</p>
                 <p className={styles.price}>
@@ -35,8 +36,8 @@ const HomeTariff = () => {
                 </p>
                 <p className={styles.offer}>{text}</p>
                 <ul>
-                  {features.map(({ item }, index) => (
-                    <li key={index}>
+                  {features.map(({ item, id }) => (
+                    <li key={id}>
                       <span className={styles.checkmark}>✔</span>
                       {item}
                     </li>

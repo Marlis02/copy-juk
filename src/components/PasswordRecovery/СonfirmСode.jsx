@@ -1,31 +1,30 @@
 'use client'
-import React, { useState, createRef, useEffect, ChangeEvent } from 'react'
+import React, { useState, createRef, useEffect } from 'react'
 import styles from './passRecov.module.scss'
 import { useRouter } from 'next/navigation'
 
 const ConfirmCode = () => {
+  let idCounter = 0
+
   const [code, setCode] = useState(['', '', '', ''])
+  const uniqueIds = code.map(() => idCounter++)
   const [seconds, setSeconds] = useState(60)
   const router = useRouter()
-  type RefArray<T> = Array<RefObject<T>>
-
-  // Создаем рефы и типизируем массив
-  const inputRefs: RefArray<HTMLInputElement> = Array(4)
+  const inputRefs = Array(4)
     .fill(0)
-    .map(() => createRef<HTMLInputElement>())
+    .map(() => createRef())
 
-  const handleChange =
-    (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
-      const newCode = [...code]
-      newCode[index] = event.target.value
-      setCode(newCode)
+  const handleChange = (index) => (event) => {
+    const newCode = [...code]
+    newCode[index] = event.target.value
+    setCode(newCode)
 
-      if (event.target.value.length === 1 && index < 3) {
-        inputRefs[index + 1].current.focus()
-      }
+    if (event.target.value.length === 1 && index < 3) {
+      inputRefs[index + 1].current.focus()
     }
+  }
 
-  const handleKeyDown = (index: number) => (event: string) => {
+  const handleKeyDown = (index) => (event) => {
     if (event.key === 'Backspace' && code[index] === '' && index > 0) {
       const newCode = [...code]
       newCode[index - 1] = ''
@@ -35,11 +34,12 @@ const ConfirmCode = () => {
   }
 
   const handleSubmit = () => {
-    let confirmCode = code.join('')
+    const confirmCode = code.join('')
 
     if (confirmCode.length < 4) {
       alert('Заполните код')
     } else {
+      console.log(confirmCode)
       router.push('/forgot-password/new-pass')
     }
   }
@@ -65,10 +65,10 @@ const ConfirmCode = () => {
       </div>
       <div className={styles.formInp}>
         {' '}
-        {code.map((_, index) => (
+        {code.map((item, index) => (
           <input
             className={styles.codeInp}
-            key={index}
+            key={uniqueIds[index]}
             type="text"
             value={code[index]}
             onChange={handleChange(index)}
@@ -81,12 +81,9 @@ const ConfirmCode = () => {
       <p className={styles.timer}>
         Отправить заново <span>{seconds}s</span>
       </p>
-      <button className={styles.btn} onClick={handleSubmit}>
+      <button type="button" className={styles.btn} onClick={handleSubmit}>
         Продолжить
       </button>
-      {/* <Modal active={newPass} setActive={setNewPass} id={'newPass'}>
-        <NewPassword />
-      </Modal> */}
     </div>
   )
 }

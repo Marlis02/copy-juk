@@ -26,6 +26,7 @@ export interface CargoProps {
 }
 
 export interface ICargoList {
+  id: number
   direction: string
   route: string
   date: string

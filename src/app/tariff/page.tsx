@@ -8,7 +8,7 @@ const TariffPage = () => {
       <div className={styles.general_block}>
         {tariffItems.map((element, index) => (
           <div
-            key={index}
+            key={element.id}
             className={index % 2 === 0 ? styles.block : styles.block_two}
           >
             <div className={index % 2 === 0 ? styles.box : styles.box_two}>

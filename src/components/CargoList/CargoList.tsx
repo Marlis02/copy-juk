@@ -40,8 +40,8 @@ const CargoList = ({ isCargo, isCar }: CargoProps) => {
             <p className={styles.listTitleItem}>Груз</p>
             <p className={styles.listTitleItem}>Стоимость</p>
           </div>
-          {cargoData.map((cargo, index) => (
-            <div className={styles.listValue} key={index}>
+          {cargoData.map((cargo) => (
+            <div className={styles.listValue} key={cargo.id}>
               <p className={styles.item}>{cargo.direction}</p>
               <p className={styles.item}>{cargo.route}</p>
               <p className={styles.item}>{cargo.date}</p>

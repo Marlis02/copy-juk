@@ -2,6 +2,7 @@ import { TariffItem } from '@/types/tariffComponent.types'
 
 export const tariffItems: TariffItem[] = [
   {
+    id: 1,
     title: 'ENTERPRISE',
     label: '$',
     number: 49,
@@ -17,6 +18,7 @@ export const tariffItems: TariffItem[] = [
     inscription: 'Advanced client billing',
   },
   {
+    id: 2,
     title: 'ENTERPRISE',
     label: '$',
     number: 49,
@@ -32,6 +34,7 @@ export const tariffItems: TariffItem[] = [
     inscription: 'Advanced client billing',
   },
   {
+    id: 3,
     title: 'ENTERPRISE',
     label: '$',
     number: 49,
@@ -47,6 +50,7 @@ export const tariffItems: TariffItem[] = [
     inscription: 'Advanced client billing',
   },
   {
+    id: 4,
     title: 'ENTERPRISE',
     label: '$',
     number: 49,
@@ -62,6 +66,7 @@ export const tariffItems: TariffItem[] = [
     inscription: 'Advanced client billing',
   },
   {
+    id: 5,
     title: 'ENTERPRISE',
     label: '$',
     number: 49,
@@ -77,6 +82,7 @@ export const tariffItems: TariffItem[] = [
     inscription: 'Advanced client billing',
   },
   {
+    id: 6,
     title: 'ENTERPRISE',
     label: '$',
     number: 49,
