@@ -1,5 +1,6 @@
 import Banner from '@/components/HomeComponents/Banner/Banner'
-import styles from './page.module.scss'
+// import styles from './page.module.scss'
+import  styles from './page.module.scss'
 
 import CargoList from '@/components/CargoList/CargoList'
 import HomeNews from '@/components/HomeComponents/HomeNews/HomeNews'
@@ -22,7 +23,7 @@ export default function Home() {
       <h3 className={styles.title}>Новости</h3>
       <HomeNews />
       <h3 className={styles.title}>Тариф</h3>
-      <HomeTariff />
+      <HomeTariff />      
     </main>
   )
 }

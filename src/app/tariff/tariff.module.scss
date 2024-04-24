@@ -1,0 +1,215 @@
+@import "../../styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap');
+$font-primary: "Inter";
+$color-primary: #8C6348;
+
+
+.container{
+    font-family: $font-primary;
+    text-align: center;
+    width: 1515px;
+    display: flex;
+    @include centered;
+    @include devices(sm) {
+        width: 550px;
+        height: 2050px;
+        margin-top: 50px;
+    }
+}
+.general_block{
+    height: 1470px;
+    width: 1380px;
+    display: flex;
+    @include flexbox(space-between, center);
+    flex-wrap: wrap;
+    @include devices(sm) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 550px;
+        height: 100%;
+       .block{
+        display: none;
+       }
+       .block_two{
+        display: none;
+       }
+       .block:nth-child(1){
+        display: block;
+        @include centered;
+    flex-direction: column;
+    }
+    .block:nth-child(3){
+        display: block;
+        @include centered;
+    flex-direction: column;
+    }
+    .block_two:nth-child(2){
+        display: block;
+        @include centered;
+    flex-direction: column;
+    }
+       
+    }
+}
+.box{
+    height: 490px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    @include flexbox(space-between, center);
+}
+.block{
+    width: 420px;
+    height: 660px;
+    border-radius: 16px;
+    @include centered;
+    flex-direction: column;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.block_two{
+    width: 420px;
+    height: 660px;
+    border-radius: 16px;
+    @include centered;
+    flex-direction: column;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-color: $color-primary;
+    color: white;
+    
+}
+.box_two{
+    height: 490px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    @include flexbox(space-between, center);
+}
+.title{
+    h4{
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 26px;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+}
+.finance{
+    width: 210px;
+    display: flex;
+    @include flexbox(space-between, center);
+    display: flex;
+    align-items: center;
+    h5{
+        font-family: DM Sans;
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 26px;
+        text-align: left;
+    }
+    h1{
+        font-size: 55px;
+        font-weight: 600;
+        line-height: 70px;
+        letter-spacing: -1px;
+        text-align: center;
+    }
+}
+.financeDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+}
+.user{
+    width: 100px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pText{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+    width: 240px;
+}
+.blueButton{
+    width: 145px;
+    height: 45px;
+    border-radius: 7px;
+    border: none;
+    background: $color-primary;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    &:hover{
+        background-color: #B98664;
+    }
+    &:active{
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(2px);
+    }
+}
+.whiteButton{
+    width: 145px;
+    height: 45px;
+    border-radius: 7px;
+    border: none;
+    background: white;
+    color: $color-primary;
+    font-size: 16px;
+    margin-top: 20px;
+    &:hover{
+        background-color: rgb(222, 222, 223);
+    }
+    &:active{
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(2px);
+    }
+}
+.arrows{
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: rgb(112, 112, 112);
+    width: 225px;
+    p{
+        width: 225px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.icon{
+    color: #3498DB;
+    width: 35px;
+    text-align: start;
+}
+.icon2{
+    color: white;
+    width: 35px;
+    text-align: start;
+}
+.arrows_two{
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    p{
+        width: 225px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+

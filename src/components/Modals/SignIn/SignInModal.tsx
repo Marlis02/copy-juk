@@ -109,7 +109,9 @@ const SignInModal = ({ setAct }: any) => {
         </button>
         <p className={styles.register}>
           Вы еще не зарегистрированы?{' '}
-          <Link href="/signup">Зарегистрироваться</Link>
+          <Link href="/signup" onClick={() => setAct(false)}>
+            Зарегистрироваться
+          </Link>
         </p>
       </form>
     </>

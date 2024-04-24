@@ -5,14 +5,13 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { navItems } from '@/data/navigation.links'
-import SignInModal from '../Modals/SignIn/SignInModal'
 import Modal from '../Modals/Modal'
+import SignInModal from '../Modals/SignIn/SignInModal'
 
 const Navbar = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [loginModal, setLoginModal] = useState(false)
-
   const togglePopup = () => {
     setIsOpen(!isOpen)
   }
@@ -121,9 +120,13 @@ const Navbar = () => {
               />
             </a>
           </div>
-          <a type="button" onClick={() => setLoginModal(true)}>
+          <button
+            className={styles.btnLogin}
+            type="button"
+            onClick={() => setLoginModal(true)}
+          >
             <Image width={24} height={24} alt="logo2" src="/icons/logout.svg" />
-          </a>
+          </button>
           <Modal setActive={setLoginModal} active={loginModal}>
             <SignInModal setAct={setLoginModal} />
           </Modal>
@@ -143,10 +146,10 @@ const Navbar = () => {
                     <Link
                       key={link.href}
                       href={link.href}
+                      onClick={togglePopup}
                       className={
                         active ? styles.activModalLink : styles.modalLink
                       }
-                      onClick={togglePopup}
                     >
                       {link.title}
                     </Link>

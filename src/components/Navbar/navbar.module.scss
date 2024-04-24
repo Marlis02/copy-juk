@@ -114,6 +114,10 @@
     border-radius: 8px;
     cursor: pointer;
     width: 150px;
+    a {
+      text-decoration: none;
+      color: var(--color-light);
+    }
     @include devices(xl) {
       width: 130px;
       height: 40px;
@@ -169,9 +173,6 @@
     position: relative;
     @media (max-width: 400px) {
       width: 55%;
-    }
-    a {
-      @include centered;
     }
   }
 }
@@ -239,7 +240,15 @@
   @include flexbox(space-between, center);
   a {
     width: 24px;
-    height: 24px;
+    height: 100%;
     @include centered;
   }
+}
+
+.btnLogin {
+  border: none;
+  background: #00000000;
+  width: 24px;
+  height: 24px;
+  @include centered;
 }

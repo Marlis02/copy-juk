@@ -1,5 +1,5 @@
+import ConfirmEmail from '@/components/PasswordRecovery/СonfirmEmail'
 import styles from './forgotPass.module.scss'
-import ConfirmEmail from '@/components/Modals/PasswordRecovery/СonfirmEmail'
 
 const ForgotPass = () => {
   return (

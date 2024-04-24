@@ -1,6 +1,5 @@
-import React from 'react'
 import styles from '../forgotPass.module.scss'
-import NewPassword from '@/components/Modals/PasswordRecovery/NewPassword'
+import NewPassword from '@/components/PasswordRecovery/NewPassword'
 
 const NewPass = () => {
   return (

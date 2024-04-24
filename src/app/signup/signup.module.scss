@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap');
+@import "../../styles/mixins.scss";
+$font-primary: "Inter";
+
+
+
+.containerSignup{
+    font-family: $font-primary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include devices(sm){
+        width: 376px;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 7px;
+    }
+}
+.parentBlockSignUp{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include devices(sm){
+        width: 376px;
+
+    }
+}
+
+.blockSignup{
+    height: 670px;
+    width: 584px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include devices(sm){
+        width: 376px;
+    }
+    h1{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.4px;
+    text-align: center;
+    }
+
+    .profile{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.8px;
+    text-align: center;
+    }
+
+    p{
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21.6px;
+        text-align: left;
+    }
+
+}
+.containerPhone{
+    width: 100%;
+    height: 71px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    input{
+        width: 97%;
+        outline: none;
+        padding: 12px 6px 12px 6px;
+        border-radius: 8px;
+        border: 2px solid #C7C7C7;
+        font-size: 17px;
+        
+    }
+}
+.containerEmail{
+    width: 100%;
+    height: 71px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    input{
+        width: 97%;
+        outline: none;
+        padding: 12px 6px 12px 6px;
+        border-radius: 8px;
+        border: 2px solid #C7C7C7;
+        font-size: 17px;
+        
+    }
+}
+.containerPassword{
+    width: 100%;
+    height: 71px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    input{
+        width: 97%;
+        outline: none;
+        padding: 12px 6px 12px 6px;
+        border-radius: 8px;
+        border: 2px solid #C7C7C7;
+        font-size: 17px;
+        
+    }
+}
+.containerPasswordTry{
+    width: 100%;
+    height: 71px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    input{
+        width: 97%;
+        outline: none;
+        padding: 12px 6px 12px 6px;
+        border-radius: 8px;
+        border: 2px solid #C7C7C7;
+        font-size: 17px;
+        
+    }
+}
+.containerBtnSignIn{
+    width: 99.5%;
+    height: 71px;
+    // border: 2px solid red;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    button{
+    padding: 18px 38px 18px 38px;
+    border-radius: 8px;
+    background-color: #8C6348;
+    color: #FCFCFC;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    border: none;
+    cursor: pointer;
+    &:hover{
+        background-color: #B98664;
+    }
+    &:active{
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(2px);
+    }
+    }
+    @include devices(sm){
+        width: 375px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.containerSignUp{
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include devices(sm){
+        width: 375px;
+    }
+}
+.childContainer{
+    width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include devices(sm){
+        width: 375px;
+    }
+}
+.textSignUp{
+    color: #000000B2;
+    text-decoration: none;
+    line-height: 23.4px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.signInBtn{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23.4px;
+    color: #8C6348;
+    text-decoration: none;
+}
+
+.image{
+    width: 810px;
+    height: 790px;
+    @include devices(sm){
+        width: 376px;
+        height: 375px;
+        margin-top: 20px;
+    }
+}
+
+.buttonBlock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 430px;
+    @include devices(sm){
+        width: 376px;
+    }
+}
+
+.buttonOrder{
+    width: 168px;
+    height: 60px;
+    border-radius: 8px;
+    border: none;
+    background: #8C6348;
+    color: white;
+    font-size: 20px;
+    line-height: 24px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    @include devices(sm){
+        width: 148px;
+        height: 50px;
+    }
+    &:hover{
+        background-color: #B98664;
+    }
+    &:active{
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(2px);
+    }
+
+}
+.buttonCargo{
+    width: 248px;
+    height: 60px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    font-size: 20px;
+    line-height: 24px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    @include devices(sm){
+        width: 200px;
+        height: 50px;
+    }
+    &:hover{
+        background-color: #efeeee;
+    }
+    &:active{
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(2px);
+    }
+
+}

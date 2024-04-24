@@ -1,5 +1,4 @@
-import ConfirmCode from '@/components/Modals/PasswordRecovery/СonfirmСode'
-import React from 'react'
+import ConfirmCode from '@/components/PasswordRecovery/СonfirmСode'
 import styles from '../forgotPass.module.scss'
 const EnterCode = () => {
   return (
