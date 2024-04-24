@@ -37,7 +37,6 @@ const ConfirmCode = () => {
     if (confirmCode.length < 4) {
       alert('Заполните код')
     } else {
-      alert(confirmCode)
       router.push('/forgot-password/new-pass')
     }
   }

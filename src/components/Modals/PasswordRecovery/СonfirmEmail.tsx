@@ -16,7 +16,6 @@ const ConfirmEmail = () => {
   } = useForm<IConfirmEmail>()
 
   const onSubmit: SubmitHandler<IConfirmEmail> = (data) => {
-    alert(data.confirmEmail)
     router.push('/forgot-password/confirm-code')
   }
 
