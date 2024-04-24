@@ -1,6 +1,5 @@
 'use client'
 
-import PasswordRecovery from '@/components/Modals/ForgotPass/Gg'
 import Modal from '@/components/Modals/Modal'
 import ConfirmCode from '@/components/Modals/PasswordRecovery/СonfirmСode'
 import { useState } from 'react'
