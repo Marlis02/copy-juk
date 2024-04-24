@@ -6,9 +6,10 @@ import { ISignInFields } from '@/types/auth.types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import Modal from '../Modal'
-
-const SignInModal = ({ setAct }: any) => {
+interface Props {
+  setAct: (active: boolean) => void
+}
+const SignInModal: React.FC<Props> = ({ setAct }) => {
   const {
     handleSubmit,
     control,
@@ -16,7 +17,6 @@ const SignInModal = ({ setAct }: any) => {
     formState: { errors },
   } = useForm<ISignInFields>()
   const [showPassword, setShowPassword] = useState(false)
-  const [modalActive, setModalActive] = useState(false)
   const router = useRouter()
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword)

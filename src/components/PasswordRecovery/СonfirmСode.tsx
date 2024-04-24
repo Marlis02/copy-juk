@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, createRef, useEffect } from 'react'
+import React, { useState, createRef, useEffect, ChangeEvent } from 'react'
 import styles from './passRecov.module.scss'
 import { useRouter } from 'next/navigation'
 
@@ -7,9 +7,12 @@ const ConfirmCode = () => {
   const [code, setCode] = useState(['', '', '', ''])
   const [seconds, setSeconds] = useState(60)
   const router = useRouter()
-  const inputRefs: any = Array(4)
+  type RefArray<T> = Array<RefObject<T>>
+
+  // Создаем рефы и типизируем массив
+  const inputRefs: RefArray<HTMLInputElement> = Array(4)
     .fill(0)
-    .map((_, i) => createRef())
+    .map(() => createRef<HTMLInputElement>())
 
   const handleChange =
     (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +25,7 @@ const ConfirmCode = () => {
       }
     }
 
-  const handleKeyDown = (index: number) => (event: any) => {
+  const handleKeyDown = (index: number) => (event: string) => {
     if (event.key === 'Backspace' && code[index] === '' && index > 0) {
       const newCode = [...code]
       newCode[index - 1] = ''

@@ -1,9 +1,12 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
 import styles from './modal.module.scss'
-
-const Modal = ({ active, setActive, children }: any) => {
+interface Props {
+  active: boolean
+  setActive: (active: boolean) => void
+  children: React.ReactNode
+}
+const Modal = ({ active, setActive, children }: Props) => {
   return (
     <div
       onClick={() => setActive(false)}
