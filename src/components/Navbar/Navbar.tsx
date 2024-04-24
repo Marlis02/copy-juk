@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { navItems } from '@/data/navigation.links'
 import SignInModal from '../Modals/SignIn/SignInModal'
+import Modal from '../Modals/Modal'
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -69,7 +70,9 @@ const Navbar = () => {
           >
             Вход
           </button>
-          <SignInModal active={loginModal} setActive={setLoginModal} />
+          <Modal setActive={setLoginModal} active={loginModal}>
+            <SignInModal />
+          </Modal>
           <button type="button" className={styles.btn}>
             <Link href="/signup">Регистрация</Link>
           </button>
@@ -121,7 +124,9 @@ const Navbar = () => {
           <a type="button" onClick={() => setLoginModal(true)}>
             <Image width={24} height={24} alt="logo2" src="/icons/logout.svg" />
           </a>
-          <SignInModal active={loginModal} setActive={setLoginModal} />
+          <Modal setActive={setLoginModal} active={loginModal}>
+            <SignInModal />
+          </Modal>
           <Image
             onClick={togglePopup}
             width={24}

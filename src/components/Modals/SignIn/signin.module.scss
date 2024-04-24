@@ -9,61 +9,15 @@
   }
 }
 
-.error {
-  width: 100%;
-  text-align: start;
-  color: red;
-  font-size: 10px;
-}
-
-.modalCon {
-  display: none;
-}
-
-.modalConActive {
-  z-index: 2;
-  height: 100vh;
-  width: 100%;
-  background: #00000057;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.3s ease-in-out forwards;
-}
-
 .formCon {
-  width: 640px;
-  height: 450px;
-  background-color: var(--color-light);
+  width: 90%;
+  margin: 30px 0;
   @include centered;
-  border-radius: 16px;
-  animation: fadeIn 0.3s ease-in-out forwards; /* apply the animation */
-  form {
-    @include flexbox(flex-start, flex-start);
-    flex-direction: column;
-    width: 90%;
-    height: 90%;
-    .formTitle {
-      font-size: 32px;
-      font-weight: 700;
-    }
-  }
-  @include devices(md) {
-    width: 540px;
-  }
-  @media (max-width: 630px) {
-    width: 400px;
-  }
-  @include devices(sm) {
-    width: 340px;
-    height: 460px;
-  }
-  @include devices(xs) {
-    width: 300px;
-    height: 490px;
+  flex-direction: column;
+
+  .formTitle {
+    font-size: 32px;
+    font-weight: 700;
   }
 }
 .inp {
@@ -148,4 +102,11 @@
   @include devices(sm) {
     flex-direction: column;
   }
+}
+
+.error {
+  width: 100%;
+  text-align: start;
+  color: red;
+  font-size: 10px;
 }
