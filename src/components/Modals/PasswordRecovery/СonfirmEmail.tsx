@@ -9,10 +9,15 @@ import { useRouter } from 'next/navigation'
 
 const ConfirmEmail = () => {
   const router = useRouter()
-  const { handleSubmit, control } = useForm<IConfirmEmail>()
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<IConfirmEmail>()
 
   const onSubmit: SubmitHandler<IConfirmEmail> = (data) => {
     alert(data.confirmEmail)
+    router.push('/forgot-password/confirm-code')
   }
 
   return (
@@ -23,7 +28,7 @@ const ConfirmEmail = () => {
         <Controller
           name="confirmEmail"
           control={control}
-          rules={{ required: true }}
+          rules={{ required: 'Email is required' }}
           defaultValue=""
           render={({ field }) => (
             <div className={styles.emailCon}>
@@ -34,13 +39,15 @@ const ConfirmEmail = () => {
                 placeholder="Email"
                 className={styles.inp}
               />
+              {errors.confirmEmail && (
+                <span className={styles.error}>
+                  {errors.confirmEmail.message}
+                </span>
+              )}
             </div>
           )}
         />
-        <button
-          className={styles.btn}
-          onClick={() => router.push('/forgot-password/confirm-code')}
-        >
+        <button type="submit" className={styles.btn}>
           Продолжить
         </button>
       </form>

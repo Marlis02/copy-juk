@@ -1,25 +1,29 @@
 @import '/src/styles/mixins.scss';
 
 .formCon {
-  width: 60%;
+  width: 50%;
   margin: 50px 0;
   @include centered;
   flex-direction: column;
   background-color: var(--color-light);
   @include centered;
   text-align: center;
+  gap: 20px;
   .title {
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     @include devices(sm) {
-      font-size: 22px;
+      font-size: 26px;
     }
   }
   .desc {
     font-size: 18px;
     font-weight: 500;
-    margin: 0 0 20px 0;
+    // margin: 0 0 20px 0;
+  }
+  @include devices(sm) {
+    width: 80%;
   }
 }
 
@@ -36,12 +40,13 @@
     border-radius: 8px;
     border: 1px solid var(--color-grey);
     font-size: 16px;
-    margin: 5px 0 10px 0;
+    // margin: 5px 0 10px 0;
   }
 }
 
 .btn {
   margin-left: auto;
+  // margin-top: 20px;
   border: none;
   width: 203px;
   height: 60px;
@@ -73,7 +78,7 @@
     font-weight: 700;
     margin-bottom: 20px;
     @include devices(sm) {
-      font-size: 20px;
+      font-size: 26px;
     }
   }
   p {
