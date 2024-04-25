@@ -2,13 +2,14 @@
 import Image from 'next/image'
 import styles from '../news/news.module.scss'
 import { newsItems } from '@/data/news.data'
+import React from 'react'
 
 const News = () => {
   return (
     <div>
       {newsItems.map((items) => {
         return (
-          <>
+          <React.Fragment key={items.id}>
             <div className={styles.globalContainer}>
               <Image
                 className={styles.image}
@@ -28,7 +29,7 @@ const News = () => {
                 </span>
               </div>
             </div>
-          </>
+          </React.Fragment>
         )
       })}
       <div className={styles.buttonVector}>

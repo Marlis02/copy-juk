@@ -35,6 +35,7 @@ const NewPassword = () => {
                 {...field}
                 placeholder="Пароль"
                 className={styles.inp}
+                autoComplete="username"
               />
             </div>
           )}
@@ -55,6 +56,7 @@ const NewPassword = () => {
                 {...field}
                 placeholder="Пароль"
                 className={styles.inp}
+                autoComplete="new-password"
               />
               {errors.confirmNewPassword && (
                 <span className={styles.error}>

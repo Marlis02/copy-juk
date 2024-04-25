@@ -35,19 +35,19 @@ const TariffPage = () => {
                   <IoMdCheckmark
                     className={index % 2 === 0 ? styles.icon : styles.icon2}
                   />
-                  <p>{element.descriptions.arrow1}</p>
+                  <span>{element.descriptions.arrow1}</span>
                 </p>
                 <p>
                   <IoMdCheckmark
                     className={index % 2 === 0 ? styles.icon : styles.icon2}
                   />
-                  <p>{element.descriptions.arrow2}</p>
+                  <span>{element.descriptions.arrow2}</span>
                 </p>
                 <p>
                   <IoMdCheckmark
                     className={index % 2 === 0 ? styles.icon : styles.icon2}
                   />
-                  <p>{element.descriptions.arrow3}</p>
+                  <span>{element.descriptions.arrow3}</span>
                 </p>
               </div>
               <p>{element.inscription}</p>

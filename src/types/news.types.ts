@@ -1,4 +1,5 @@
 export interface NewsItems {
+  id: number
   title: string
   description: string
   image: string

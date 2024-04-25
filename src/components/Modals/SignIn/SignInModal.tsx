@@ -47,6 +47,7 @@ const SignInModal: React.FC<Props> = ({ setAct }) => {
                 {...field}
                 placeholder="Email"
                 className={styles.inp}
+                autoComplete="username"
               />
               {errors.email && (
                 <span className={styles.error}>{errors.email.message}</span>
@@ -67,6 +68,7 @@ const SignInModal: React.FC<Props> = ({ setAct }) => {
                 {...field}
                 placeholder="Пароль"
                 className={styles.inp}
+                autoComplete="current-password"
               />
               {errors.password && (
                 <span className={styles.error}>{errors.password.message}</span>
