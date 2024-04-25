@@ -3,35 +3,37 @@ import React, { useState, createRef, useEffect } from 'react'
 import styles from './passRecov.module.scss'
 import { useRouter } from 'next/navigation'
 
-const ConfirmCode = () => {
+const ConfirmCode: React.FC = () => {
   let idCounter = 0
 
-  const [code, setCode] = useState(['', '', '', ''])
+  const [code, setCode] = useState<string[]>(['', '', '', ''])
   const uniqueIds = code.map(() => idCounter++)
-  const [seconds, setSeconds] = useState(60)
+  const [seconds, setSeconds] = useState<number>(60)
   const router = useRouter()
-  const inputRefs = Array(4)
-    .fill(0)
-    .map(() => createRef())
+  const inputRefs = Array.from({ length: 4 }, () =>
+    createRef<HTMLInputElement>(),
+  )
 
-  const handleChange = (index) => (event) => {
-    const newCode = [...code]
-    newCode[index] = event.target.value
-    setCode(newCode)
-
-    if (event.target.value.length === 1 && index < 3) {
-      inputRefs[index + 1].current.focus()
-    }
-  }
-
-  const handleKeyDown = (index) => (event) => {
-    if (event.key === 'Backspace' && code[index] === '' && index > 0) {
+  const handleChange =
+    (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
       const newCode = [...code]
-      newCode[index - 1] = ''
+      newCode[index] = event.target.value
       setCode(newCode)
-      inputRefs[index - 1].current.focus()
+
+      if (event.target.value.length === 1 && index < 3) {
+        inputRefs[index + 1].current?.focus()
+      }
     }
-  }
+
+  const handleKeyDown =
+    (index: number) => (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'Backspace' && code[index] === '' && index > 0) {
+        const newCode = [...code]
+        newCode[index - 1] = ''
+        setCode(newCode)
+        inputRefs[index - 1].current?.focus()
+      }
+    }
 
   const handleSubmit = () => {
     const confirmCode = code.join('')
