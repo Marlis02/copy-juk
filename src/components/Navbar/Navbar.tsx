@@ -202,7 +202,7 @@ const Navbar = () => {
                       height={24}
                     />
                   </a>
-                  <a href="#">
+                  <a href="/profile">
                     <Image
                       src="/dark-icons/facebook.svg"
                       alt="vector"

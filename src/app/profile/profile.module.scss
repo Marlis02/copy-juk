@@ -1,0 +1,79 @@
+@import 'src/styles/mixins.scss';
+.con {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  @include devices(lg) {
+    @include centered;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.con1 {
+  width: 100%;
+  @include flexbox(flex-start, center);
+  flex-direction: column;
+  gap: 20px;
+}
+.con2 {
+  width: 100%;
+
+  @include flexbox(flex-start, center);
+  flex-direction: column;
+  gap: 20px;
+}
+
+.userInfo {
+  width: 95%;
+  height: 265px;
+  box-shadow: 4px 4px 6px 0px #00000040;
+  border-radius: 16px;
+  @include centered;
+  @media (max-width: 630px) {
+    width: 90%;
+  }
+}
+.userCars {
+  width: 95%;
+  height: 340px;
+  box-shadow: 4px 4px 6px 0px #00000040;
+  border-radius: 16px;
+  @include centered;
+  @media (max-width: 630px) {
+    width: 90%;
+  }
+}
+
+.userPhoto {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 4px 4px 6px 0px #00000040;
+  @include centered;
+  @include devices(lg) {
+    display: none;
+  }
+}
+.userRating {
+  width: 95%;
+  height: 160px;
+  border-radius: 16px;
+  box-shadow: 4px 4px 6px 0px #00000040;
+
+  @include centered;
+  @media (max-width: 630px) {
+    width: 90%;
+  }
+}
+.reviews {
+  width: 95%;
+  height: 580px;
+  border-radius: 16px;
+  box-shadow: 4px 4px 6px 0px #00000040;
+
+  @include centered;
+  @media (max-width: 630px) {
+    width: 90%;
+  }
+}

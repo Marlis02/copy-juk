@@ -53,7 +53,13 @@ const SignUpPage = () => {
           </div>
         </div>
       </div>
-      <Image className={styles.image} src="/images/Cargo.png" alt="img" />
+      <Image
+        className={styles.image}
+        width={390}
+        height={580}
+        src="/images/Cargo.png"
+        alt="img"
+      />
     </div>
   )
 }
