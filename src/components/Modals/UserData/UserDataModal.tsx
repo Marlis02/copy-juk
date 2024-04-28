@@ -1,17 +1,23 @@
 'use client'
+import { carsCountries } from '@/data/cars.data'
 import styles from './userDataModal.module.scss'
 import { IUserData } from '@/types/profile.types'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import ReactSelect from 'react-select'
+import { DiVim } from 'react-icons/di'
+import { userPositions } from '@/data/profile.data'
 
 interface Props {
   setAct: (active: boolean) => void
   setData: (active: any) => any
 }
 const UserData = ({ setAct, setData }: Props) => {
+  const [isMounted, setIsMounted] = useState(false) // fix error version
   const { handleSubmit, control, setValue, reset } = useForm<IUserData>()
   const [userImg, setUserImg] = useState<string | null>(null)
+  useEffect(() => setIsMounted(true), [])
 
   const onSubmit: SubmitHandler<IUserData> = (data) => {
     console.log(data)
@@ -125,6 +131,34 @@ const UserData = ({ setAct, setData }: Props) => {
             </div>
           )}
         />
+        {isMounted && (
+          <Controller
+            name="position"
+            control={control}
+            render={({ field: { onChange, value } }) => (
+              <div className={styles.inpCon}>
+                <p>Введите Должность</p>
+                <ReactSelect
+                  classNamePrefix={styles.inpSelcet}
+                  className={styles.inpSelcet}
+                  id={styles.inpSelect}
+                  placeholder="Должность"
+                  options={userPositions}
+                  value={userPositions.find((c) => c.value === value)}
+                  onChange={(val) => onChange(val ? val.value : '')}
+                  styles={{
+                    control: (provided) => ({
+                      ...provided,
+                      borderRadius: '8px',
+                      height: '44px',
+                    }),
+                  }}
+                />
+              </div>
+            )}
+            rules={{ required: true }}
+          />
+        )}
         <Controller
           name="city"
           control={control}

@@ -29,8 +29,24 @@
   box-shadow: 4px 4px 6px 0px #00000040;
   border-radius: 16px;
   @include centered;
+  flex-direction: column;
   @media (max-width: 630px) {
     width: 90%;
+  }
+  .userInfoCon {
+    width: 92%;
+    height: 85%;
+    @include flexbox(space-between, flex-start);
+    flex-direction: column;
+    cursor: pointer;
+    .userInfoTitle {
+      width: 100%;
+      @include flexbox(space-between, center);
+    }
+    .userInfoText {
+      width: 100%;
+      @include flexbox(space-between, center);
+    }
   }
 }
 .userCars {

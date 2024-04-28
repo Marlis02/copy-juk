@@ -4,4 +4,10 @@ export interface IUserData {
   email: string
   phone?: string
   city?: string
+  position?: string
+}
+
+export interface IUserPositions {
+  label: string
+  value: string
 }

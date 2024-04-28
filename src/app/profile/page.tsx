@@ -14,8 +14,36 @@ const Profile = () => {
   return (
     <div className={styles.con}>
       <div className={styles.con1}>
-        <div className={styles.userInfo} onClick={() => setUserModal(true)}>
-          Профиль пользователя : {userData ? userData.name : 'user'}
+        <div className={styles.userInfo}>
+          <div className={styles.userInfoCon}>
+            <div
+              className={styles.userInfoTitle}
+              onClick={() => setUserModal(true)}
+            >
+              <p>Профиль пользователя</p>
+              <Image src="/icons/pen.svg" alt="pen" width={18} height={19} />
+            </div>
+            <div className={styles.userInfoText}>
+              <p>Имя </p>
+              <p>{userData ? userData.name : '-'}</p>
+            </div>
+            <div className={styles.userInfoText}>
+              <p>Профиль</p>
+              <p>{userData ? userData.position : '-'}</p>
+            </div>
+            <div className={styles.userInfoText}>
+              <p>Город</p>
+              <p>{userData ? userData.city : '-'}</p>
+            </div>
+            <div className={styles.userInfoText}>
+              <p>Email</p>
+              <p>{userData ? userData.email : '-'}</p>
+            </div>
+            <div className={styles.userInfoText}>
+              <p>Телефон</p>
+              <p>{userData ? userData.phone : '-'}</p>
+            </div>
+          </div>
         </div>
         <Modal setActive={setUserModal} active={userModal}>
           <UserData setAct={setUserModal} setData={setUserData} />
