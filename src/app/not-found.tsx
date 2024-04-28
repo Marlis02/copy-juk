@@ -1,6 +1,6 @@
-import styles from '../error/error.module.scss'
+import styles from '@/styles/error.module.scss'
 
-const Error = () => {
+const NotFound = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.h1}>404</h1>
@@ -12,4 +12,4 @@ const Error = () => {
   )
 }
 
-export default Error
+export default NotFound

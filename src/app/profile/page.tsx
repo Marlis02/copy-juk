@@ -4,7 +4,7 @@ const Profile = () => {
   return (
     <div className={styles.con}>
       <div className={styles.con1}>
-        <div className={styles.userInfo}>Профиль пользователя</div>
+        <div className={styles.userInfo}>Профиль пользователя : user</div>
         <div className={styles.userCars}>Мой Автопарк</div>
       </div>
       <div className={styles.con2}>

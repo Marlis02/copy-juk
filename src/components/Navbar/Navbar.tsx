@@ -177,7 +177,7 @@ const Navbar = () => {
                   +996 675 566 567
                 </div>
 
-                <div className={styles.sos_icons}>
+                <div className={styles.sos_icons} onClick={togglePopup}>
                   <a href="#">
                     <Image
                       src="/dark-icons/whatsapp.svg"
@@ -202,14 +202,14 @@ const Navbar = () => {
                       height={24}
                     />
                   </a>
-                  <a href="/profile">
+                  <Link href="/profile">
                     <Image
                       src="/dark-icons/facebook.svg"
                       alt="vector"
                       width={24}
                       height={24}
                     />
-                  </a>
+                  </Link>
                 </div>
                 <span className={styles.modalClose} onClick={togglePopup}>
                   ×

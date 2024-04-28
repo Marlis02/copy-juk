@@ -1,4 +1,5 @@
 'use client'
+
 import styles from './passRecov.module.scss'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { IConfirmEmail } from '@/types/auth.types'
@@ -14,7 +15,6 @@ const ConfirmEmail = () => {
 
   const onSubmit: SubmitHandler<IConfirmEmail> = (data) => {
     console.log(data)
-
     router.push('/forgot-password/confirm-code')
   }
 

@@ -6,10 +6,11 @@ import { ISignInFields } from '@/types/auth.types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-interface Props {
+
+interface SignInModalProps {
   setAct: (active: boolean) => void
 }
-const SignInModal: React.FC<Props> = ({ setAct }) => {
+const SignInModal = ({ setAct }: SignInModalProps) => {
   const {
     handleSubmit,
     control,

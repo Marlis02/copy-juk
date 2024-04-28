@@ -33,7 +33,7 @@ export const cargoData: ICargoList[] = [
     cost: 'договорная BYN бензин',
   },
   {
-    id: 5,
+    id: 4,
     direction: 'BLR-KAZ 4226км',
     route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
     date: '23.03.24',
@@ -41,7 +41,7 @@ export const cargoData: ICargoList[] = [
     cost: 'договорная BYN бензин',
   },
   {
-    id: 6,
+    id: 5,
     direction: 'BLR-KAZ 4226км',
     route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
     date: '13.05.21',
@@ -49,10 +49,18 @@ export const cargoData: ICargoList[] = [
     cost: 'договорная BYN бензин',
   },
   {
-    id: 7,
+    id: 6,
     direction: 'BLR-KAZ 4226км',
     route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
     date: '20.03.21',
+    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
+    cost: 'договорная BYN бензин',
+  },
+  {
+    id: 7,
+    direction: 'BLR-KAZ 4226км',
+    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
+    date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
   },
@@ -114,14 +122,6 @@ export const cargoData: ICargoList[] = [
   },
   {
     id: 15,
-    direction: 'BLR-KAZ 4226км',
-    route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
-    date: '23.03.21',
-    cargo: '21 т, 82 м3, кирпич, верхняя металл.',
-    cost: 'договорная BYN бензин',
-  },
-  {
-    id: 16,
     direction: 'BLR-KAZ 4226км',
     route: 'Минск (BY) Минская обл., Боровое (BY) Минская обл., 92 км',
     date: '23.03.21',

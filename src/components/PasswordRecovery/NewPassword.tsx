@@ -35,7 +35,7 @@ const NewPassword = () => {
                 {...field}
                 placeholder="Пароль"
                 className={styles.inp}
-                autoComplete="username"
+                autoComplete="new-password"
               />
             </div>
           )}

@@ -20,7 +20,7 @@
     "react/no-array-index-key": "error",
     "no-var": "error",
     "prefer-const": "warn",
-    "react/prop-types": "on",
+    "react/prop-types": "1",
     "react/button-has-type": "warn",
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": [

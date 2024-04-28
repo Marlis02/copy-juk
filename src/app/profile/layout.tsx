@@ -75,7 +75,7 @@ const ProfileLayout = ({
           height={14}
           onClick={() => toggleSidebar()}
         />
-        {isSidebarOpen && (
+        {!isSidebarOpen && (
           <div className={styles.profileNavModal}>
             {profileItems.map(({ href, title }) => {
               const active = pathname === href
