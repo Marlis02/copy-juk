@@ -53,6 +53,12 @@
   @include devices(lg) {
     display: none;
   }
+  .userAva {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+  }
 }
 .userRating {
   width: 95%;

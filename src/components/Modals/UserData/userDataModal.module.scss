@@ -1,0 +1,65 @@
+@import '/src/styles/mixins.scss';
+
+.formCon {
+  width: 90%;
+  margin: 30px 0;
+  @include centered;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inpCon {
+  @include centered;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+  .inp {
+    width: calc(100% - 20px);
+    height: 44px;
+    padding: 0 10px;
+    border-radius: 8px;
+    border: 1px solid var(--color-grey);
+    font-size: 16px;
+  }
+  p {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+.photoCon {
+  width: 100%;
+  @include flexbox(space-between, center);
+  p {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .previewPhoto {
+    cursor: pointer;
+  }
+  .uploadedPhoto {
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  input {
+    display: none;
+  }
+}
+.userBtn {
+  width: 180px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  border: none;
+  background-color: var(--color-brown);
+  color: var(--color-light);
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 20px;
+  @include devices(sm) {
+    width: 100%;
+  }
+}
