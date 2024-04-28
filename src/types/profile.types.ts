@@ -11,3 +11,7 @@ export interface IUserPositions {
   label: string
   value: string
 }
+export interface IReviews {
+  id: number
+  value: string
+}

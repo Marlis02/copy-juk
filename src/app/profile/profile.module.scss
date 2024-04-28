@@ -25,7 +25,7 @@
 
 .userInfo {
   width: 95%;
-  height: 265px;
+  height: auto;
   box-shadow: 4px 4px 6px 0px #00000040;
   border-radius: 16px;
   @include centered;
@@ -33,30 +33,35 @@
   @media (max-width: 630px) {
     width: 90%;
   }
-  .userInfoCon {
-    width: 92%;
-    height: 85%;
-    @include flexbox(space-between, flex-start);
-    flex-direction: column;
-    cursor: pointer;
-    .userInfoTitle {
-      width: 100%;
-      @include flexbox(space-between, center);
+  gap: 15px;
+  .userInfoTitle {
+    margin-top: 15px;
+    width: 94%;
+    @include flexbox(space-between, center);
+    p {
+      font-size: 24px;
+      font-weight: 600;
     }
-    .userInfoText {
-      width: 100%;
-      @include flexbox(space-between, center);
+    @media (max-width: 630px) {
+      width: 90%;
     }
   }
-}
-.userCars {
-  width: 95%;
-  height: 340px;
-  box-shadow: 4px 4px 6px 0px #00000040;
-  border-radius: 16px;
-  @include centered;
-  @media (max-width: 630px) {
-    width: 90%;
+  .userInfoText {
+    width: 94%;
+    @include flexbox(space-between, center);
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      &:last-child {
+        font-weight: 400;
+      }
+    }
+    &:last-child {
+      margin-bottom: 20px;
+    }
+    @media (max-width: 630px) {
+      width: 90%;
+    }
   }
 }
 
@@ -81,18 +86,60 @@
   height: 160px;
   border-radius: 16px;
   box-shadow: 4px 4px 6px 0px #00000040;
-  @include centered;
+  @include flexbox(center, flex-start);
+  flex-direction: column;
   @media (max-width: 630px) {
     width: 90%;
   }
+  p {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    &:last-child {
+      font-size: 44px;
+      font-weight: lighter;
+    }
+  }
 }
+
 .reviews {
   width: 95%;
-  height: 580px;
+  height: auto;
   border-radius: 16px;
   box-shadow: 4px 4px 6px 0px #00000040;
   @include centered;
+  flex-direction: column;
   @media (max-width: 630px) {
     width: 90%;
+  }
+
+  .reviewsTitle {
+    height: 60px;
+    width: 95%;
+    @include flexbox(space-between, center);
+    p {
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  .reviewsOpen {
+    width: 95%;
+    height: auto;
+    animation: fadeIn 0.3s ease-in-out forwards;
+    .review {
+      margin: 20px 0;
+    }
+  }
+  .reviewsClose {
+    display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
