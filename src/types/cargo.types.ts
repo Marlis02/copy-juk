@@ -33,3 +33,60 @@ export interface ICargoList {
   cargo: string
   cost: string
 }
+
+// create-cargo-inputs
+export interface Dimensions {
+  length: number
+  width: number
+  height: number
+  diameter: number
+}
+
+export interface ICargoSize {
+  cargoWeight: number
+  weightType: string
+  cargoVolume: string
+}
+export interface ITransportSize {
+  transportVolume: string
+  transportWeight: number
+  transportWeightType: string
+}
+
+export interface IUploading {
+  locality: string
+  addressLocality: string
+  uploadingTime: string
+}
+export interface IUnloading {
+  locality: string
+  addressLocality: string
+  unloadingTime: string
+}
+export interface ICreateCargoInputs {
+  cargoName: string
+  cargoSize: ICargoSize
+  transportName: string
+  transportSize: ITransportSize
+  cargoDimensions: Dimensions
+  containerCarrier: string
+  smallTonnageContainers: string
+  readyToLoad: string
+  workingDays: string
+  workingDate: string
+  uploading: IUploading
+  unloading: IUnloading
+  upper: string
+  rear: string
+  addPayment: {
+    prepaymentFuel: boolean
+    paymentOnUnloading: boolean
+  }
+  contacts: {
+    name: string
+    phone: string
+  }
+  price: string
+  note: string
+  addPhoto: string
+}

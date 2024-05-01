@@ -1,0 +1,233 @@
+@import '/src/styles/mixins.scss';
+
+.formCon {
+  width: 100%;
+  @include centered;
+  flex-direction: column;
+  gap: 30px;
+  @media (max-width: 630px) {
+    width: 90%;
+  }
+}
+
+.inp {
+  border: 1px solid var(--color-grey);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0 10px;
+  height: 38px;
+  width: 250px;
+}
+.blocks {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 12fr;
+  gap: 10px;
+  p {
+    font-size: 18px;
+    font-weight: 600;
+    span {
+      color: #fe5e1d;
+    }
+  }
+
+  @media (max-width: 630px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputsCon {
+  width: 100%;
+  @include flexbox(flex-start, flex-start);
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cargoCon {
+  gap: 20px;
+  flex-direction: column;
+  .infoCon {
+    width: 100%;
+    @include flexbox(flex-start, flex-start);
+    flex-wrap: wrap;
+    gap: 10px;
+    .cargoInp {
+      width: 90px;
+      &:first-child {
+        width: 250px;
+      }
+    }
+    .selectInp {
+      width: 90px;
+    }
+  }
+  .dimensionsCon {
+    @include flexbox(flex-start, flex-start);
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    .dimensionsBlock {
+      p {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #5d5d5f;
+      }
+      .dimensionsInputs {
+        @include flexbox(flex-start, flex-start);
+        gap: 10px;
+        // border: 1px solid grey;
+        .dimensionsInp {
+          width: 90px;
+        }
+      }
+    }
+  }
+}
+
+.trailerSelect {
+  width: 260px;
+  &:last-child {
+    width: 290px;
+  }
+}
+
+.dateSelect {
+  width: 260px;
+}
+
+.dateInp {
+  width: 150px;
+  color: var(--color-grey);
+}
+
+.uploadCon {
+  flex-direction: column;
+  gap: 20px;
+  .uploadBlock {
+    @include flexbox(flex-start, flex-start);
+    flex-wrap: wrap;
+    gap: 10px;
+    &:last-child {
+      flex-direction: column;
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        color: #5d5d5f;
+
+        &:last-child {
+          background-color: #f8f8f8;
+          padding: 5px;
+          border-radius: 4px;
+          span {
+            color: var(--color-brown);
+          }
+        }
+      }
+      .uploadInp {
+        width: 80px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.blocks2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 12fr;
+  gap: 10px;
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #5d5d5f;
+  }
+
+  @media (max-width: 630px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.payCon {
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 5px;
+  flex-wrap: wrap;
+  .payBlock {
+    @include centered;
+    gap: 20px;
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      color: #5d5d5f;
+    }
+
+    .payCheck {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none; /* Для Mozilla Firefox */
+      outline: 3px solid var(--color-grey);
+      outline-offset: 3px;
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border-radius: 50%;
+      border: 3px solid var(--color-grey);
+      &:checked {
+        background-color: var(--color-grey);
+      }
+    }
+  }
+}
+.contactCon {
+  p {
+    background-color: #f8f8f8;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  flex-direction: column;
+  .contactBlock {
+    @include flexbox(flex-start, flex-start);
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+.noteInp {
+  width: 60%;
+  height: 100px;
+}
+.uploadPhoto {
+  width: 75px;
+  height: 35px;
+  border: 2px solid var(--color-brown);
+  border-radius: 8px;
+  color: var(--color-brown);
+  font-size: 16px;
+  font-weight: 500;
+  @include flexbox(flex-end, center);
+  position: relative;
+  padding-right: 10px;
+  span {
+    @include centered;
+    font-size: 26px;
+    position: absolute;
+    left: 10%;
+    top: 1%;
+  }
+  cursor: pointer;
+}
+
+.btn {
+  width: 220px;
+  height: 60px;
+  border-radius: 8px;
+  color: var(--color-light);
+  background-color: var(--color-brown);
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: auto;
+}

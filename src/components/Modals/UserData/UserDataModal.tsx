@@ -6,7 +6,6 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import ReactSelect from 'react-select'
-import { DiVim } from 'react-icons/di'
 import { userPositions } from '@/data/profile.data'
 
 interface Props {
@@ -15,7 +14,7 @@ interface Props {
 }
 const UserData = ({ setAct, setData }: Props) => {
   const [isMounted, setIsMounted] = useState(false) // fix error version
-  const { handleSubmit, control, setValue, reset } = useForm<IUserData>()
+  const { handleSubmit, control, setValue } = useForm<IUserData>()
   const [userImg, setUserImg] = useState<string | null>(null)
   useEffect(() => setIsMounted(true), [])
 

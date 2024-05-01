@@ -6,6 +6,11 @@ export const cargoCountries: ICargoCountries[] = [
   { label: 'China', value: 'China' },
   { label: 'Finland', value: 'Finland' },
 ]
+export const cargoWeightTypes: ICargoCountries[] = [
+  { label: 'т', value: 'т' },
+  { label: 'кг', value: 'кг' },
+  { label: 'гр', value: 'гр' },
+]
 
 export const cargoData: ICargoList[] = [
   {

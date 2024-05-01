@@ -1,0 +1,40 @@
+@import '/src/styles/mixins.scss';
+
+.con {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.btnsCon {
+  margin: 20px 0 50px 0;
+  button {
+    width: 150px;
+    height: 47px;
+    border: none;
+    box-shadow: 2px 2px 6px 0px #00000040;
+    background-color: var(--color-light);
+    border-radius: 8px;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  }
+  .btnActive {
+    background-color: var(--color-brown);
+    color: var(--color-light);
+  }
+}
+
+.content {
+  width: 100%;
+  @include flexbox(center, flex-start);
+  flex-direction: column;
+
+  @media (max-width: 630px) {
+    @include centered;
+  }
+}
