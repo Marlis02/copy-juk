@@ -10,9 +10,8 @@ import CreateCargoInputs from '@/components/Inputs/cargoInputs/CargoInputs'
 
 const CreateCargo = () => {
   const [isMounted, setIsMounted] = useState(false) // fix error version
-  const [cargoPhoto, setCargoPhoto] = useState<string | null>(null)
   useEffect(() => setIsMounted(true), [])
-  const { control, handleSubmit, register, setValue } =
+  const { control, handleSubmit, register, setValue, reset } =
     useForm<ICreateCargoInputs>()
   const onSubmit: SubmitHandler<ICreateCargoInputs> = (data) => {
     console.log(data)
@@ -26,6 +25,12 @@ const CreateCargo = () => {
   }
   return (
     <>
+      <div className={styles.title}>
+        <p>Добавить груз</p>
+        <button className={styles.clearBtn} onClick={() => reset()}>
+          ОЧИСТИТЬ ФОРМУ
+        </button>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.formCon}>
         <div className={styles.blocks}>
           <p>
@@ -426,7 +431,7 @@ const CreateCargo = () => {
         </div>
 
         <button className={styles.btn} type="submit">
-          Добавить груз
+          Опубликовать Груз
         </button>
       </form>
     </>
