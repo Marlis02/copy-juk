@@ -145,6 +145,7 @@
   @include flexbox(center, flex-start);
   flex-direction: column;
   gap: 20px;
+  z-index: 2;
 
   a {
     text-decoration: none;
