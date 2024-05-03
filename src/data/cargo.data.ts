@@ -20,6 +20,8 @@ export const cargoData: ICargoList[] = [
     date: '24.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Активно',
+    status: 'В работе',
   },
   {
     id: 2,
@@ -28,6 +30,8 @@ export const cargoData: ICargoList[] = [
     date: '26.12.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
+    status: 'Выполнен',
   },
   {
     id: 3,
@@ -36,6 +40,8 @@ export const cargoData: ICargoList[] = [
     date: '23.03.23',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Активно',
+    status: 'В работе',
   },
   {
     id: 4,
@@ -44,6 +50,8 @@ export const cargoData: ICargoList[] = [
     date: '23.03.24',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
+    status: 'Выполнен',
   },
   {
     id: 5,
@@ -52,6 +60,7 @@ export const cargoData: ICargoList[] = [
     date: '13.05.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 6,
@@ -60,6 +69,7 @@ export const cargoData: ICargoList[] = [
     date: '20.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 7,
@@ -68,6 +78,7 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 8,
@@ -76,6 +87,7 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 9,
@@ -84,6 +96,7 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 10,
@@ -92,6 +105,7 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 11,
@@ -100,6 +114,7 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 12,
@@ -108,6 +123,7 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 13,
@@ -116,6 +132,7 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 14,
@@ -124,6 +141,7 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
   {
     id: 15,
@@ -132,5 +150,6 @@ export const cargoData: ICargoList[] = [
     date: '23.03.21',
     cargo: '21 т, 82 м3, кирпич, верхняя металл.',
     cost: 'договорная BYN бензин',
+    active: 'Не активно',
   },
 ]

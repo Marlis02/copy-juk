@@ -229,7 +229,7 @@ const Cargo = () => {
         </div>
       </form>
 
-      <CargoList isCargo={true} isCar={false} />
+      <CargoList isCargo={true} isCar={false} home={true} />
     </div>
   )
 }

@@ -28,6 +28,9 @@ export interface ISelect {
 export interface CargoProps {
   isCargo: boolean
   isCar: boolean
+  home?: boolean
+  paymentHistory?: boolean
+  orderHistory?: boolean
 }
 
 export interface ICargoList {
@@ -37,6 +40,8 @@ export interface ICargoList {
   date: string
   cargo: string
   cost: string
+  active: string
+  status?: string
 }
 
 // create-cargo-inputs

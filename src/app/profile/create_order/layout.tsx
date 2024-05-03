@@ -14,6 +14,7 @@ const OrderLayout = ({
     <div className={styles.con}>
       <div className={styles.btnsCon}>
         <button
+          type="button"
           className={
             pathname === '/profile/create_order/create_cargo'
               ? styles.btnActive
@@ -25,6 +26,7 @@ const OrderLayout = ({
         </button>
 
         <button
+          type="button"
           className={
             pathname === '/profile/create_order/create_car'
               ? styles.btnActive

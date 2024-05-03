@@ -6,7 +6,6 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import styles from './createCargo.module.scss'
 import ReactSelect from 'react-select'
 import { cargoWeightTypes } from '@/data/cargo.data'
-import CreateCargoInputs from '@/components/Inputs/cargoInputs/CargoInputs'
 
 const CreateCargo = () => {
   const [isMounted, setIsMounted] = useState(false) // fix error version
@@ -19,15 +18,20 @@ const CreateCargo = () => {
 
   const uploadPhoto = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      const selectedFile: any = e.target.files[0]
-      setValue('addPhoto', selectedFile)
+      const selectedFile: File = e.target.files[0]
+      const fileURL = URL.createObjectURL(selectedFile)
+      setValue('addPhoto', fileURL)
     }
   }
   return (
     <>
       <div className={styles.title}>
         <p>Добавить груз</p>
-        <button className={styles.clearBtn} onClick={() => reset()}>
+        <button
+          type="button"
+          className={styles.clearBtn}
+          onClick={() => reset()}
+        >
           ОЧИСТИТЬ ФОРМУ
         </button>
       </div>
@@ -302,13 +306,13 @@ const CreateCargo = () => {
               <input
                 type="text"
                 placeholder="Населенный пункт"
-                {...register('uploading.locality')}
+                {...register('unloading.locality')}
                 className={`${styles.uploadInp} ${styles.inp}`}
               />
               <input
                 type="text"
                 placeholder="Адрес в населенном пункте"
-                {...register('uploading.addressLocality')}
+                {...register('unloading.addressLocality')}
                 className={`${styles.uploadInp} ${styles.inp}`}
               />
             </div>
@@ -317,7 +321,7 @@ const CreateCargo = () => {
               <input
                 type="text"
                 placeholder="00:00"
-                {...register('uploading.uploadingTime')}
+                {...register('unloading.unloadingTime')}
                 className={`${styles.uploadInp} ${styles.inp}`}
               />
               <p>

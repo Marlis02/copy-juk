@@ -11,9 +11,6 @@ const CreateCar = () => {
   useEffect(() => setIsMounted(true), [])
   const { control, handleSubmit, register, reset } = useForm<ICrateCarInputs>()
 
-  const a = new Date()
-  console.log(a)
-
   const onSubmit: SubmitHandler<ICrateCarInputs> = (data) => {
     console.log(data)
   }
@@ -22,7 +19,11 @@ const CreateCar = () => {
     <>
       <div className={styles.title}>
         <p>Добавить груз</p>
-        <button className={styles.clearBtn} onClick={() => reset()}>
+        <button
+          type="button"
+          className={styles.clearBtn}
+          onClick={() => reset()}
+        >
           ОЧИСТИТЬ ФОРМУ
         </button>
       </div>
@@ -211,8 +212,9 @@ const CreateCar = () => {
                 {...register('when.readyToUpload')}
                 className={styles.roundCheck}
               />
-              <label className={styles.label}>
-                 готова к загрузке (с сегодняшнего дня + 2 дня)
+              <label className={styles.label} id={styles.label2}>
+                готова к загрузке <br />
+                (с сегодняшнего дня + 2 дня)
               </label>
             </div>
             <div className={styles.inputsCon}>
@@ -274,7 +276,7 @@ const CreateCar = () => {
                 />
               )}
               <label className={styles.label}>
-                (с сегодняшнего дня + 2 месяца)
+                (c сегодняшнего дня + 2 месяца)
               </label>
             </div>
             <span className={styles.rules}>

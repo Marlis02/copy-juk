@@ -50,6 +50,9 @@
   align-self: flex-start;
   padding: 5px;
   border-radius: 5px;
+  @media (max-width: 630px) {
+    width: 90%;
+  }
 }
 
 .blocks {
@@ -84,10 +87,12 @@
   flex-wrap: wrap;
 }
 .label {
+  white-space: pre-line;
   font-size: 16px;
   font-weight: 500;
   color: #5d5d5f;
   margin: 0 10px;
+  word-wrap: break-word;
 }
 
 .roundCheck {

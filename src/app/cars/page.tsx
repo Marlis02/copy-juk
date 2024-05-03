@@ -229,7 +229,7 @@ const Cars: React.FC = () => {
         </div>
       </form>
 
-      <CargoList isCargo={false} isCar={true} />
+      <CargoList isCargo={false} isCar={true} home={true} />
     </div>
   )
 }

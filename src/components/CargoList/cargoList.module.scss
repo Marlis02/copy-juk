@@ -217,3 +217,74 @@
     }
   }
 }
+
+// profile list
+
+.listTitle2 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.elem {
+  padding-left: 20px;
+  @include devices(lg) {
+    font-size: 12px;
+  }
+}
+.activeElem {
+  color: #6cca7c;
+  padding-left: 20px;
+  @include devices(lg) {
+    font-size: 12px;
+  }
+}
+.listValue2 {
+  width: 100%;
+  &:nth-child(odd) {
+    background-color: #f8f8f8;
+    border-radius: 16px;
+  }
+  .web {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .tablet {
+    display: none;
+  }
+  .mobile {
+    display: none;
+  }
+  @include devices(lg) {
+    .web {
+      display: none;
+    }
+    .tablet {
+      height: 100px;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      justify-content: center;
+      align-items: center;
+      .tablet__item {
+        @include flexbox(center, flex-start);
+        flex-direction: column;
+      }
+      @include devices(sm) {
+        display: none;
+      }
+    }
+  }
+  @include devices(sm) {
+    .mobile {
+      height: 100px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      .mobile__item {
+        @include flexbox(center, flex-start);
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,9 +1,10 @@
+import CargoList from '@/components/CargoList/CargoList'
 import React from 'react'
 const PaymentHistory = () => {
   return (
-    <div>
-      <h2>Payment history </h2>
-    </div>
+    <>
+      <CargoList isCar={false} isCargo={false} paymentHistory={true} />
+    </>
   )
 }
 

@@ -1,5 +1,4 @@
 'use client'
-import { carsCountries } from '@/data/cars.data'
 import styles from './userDataModal.module.scss'
 import { IUserData } from '@/types/profile.types'
 import Image from 'next/image'
@@ -10,7 +9,7 @@ import { userPositions } from '@/data/profile.data'
 
 interface Props {
   setAct: (active: boolean) => void
-  setData: (active: any) => any
+  setData: (active: IUserData) => void
 }
 const UserData = ({ setAct, setData }: Props) => {
   const [isMounted, setIsMounted] = useState(false) // fix error version
@@ -25,7 +24,7 @@ const UserData = ({ setAct, setData }: Props) => {
   }
   const uploadPhoto = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      const selectedFile: any = e.target.files[0]
+      const selectedFile: File = e.target.files[0]
       setUserImg(URL.createObjectURL(selectedFile))
       setValue('photo', URL.createObjectURL(selectedFile))
     }

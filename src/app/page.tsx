@@ -18,7 +18,7 @@ export default function Home() {
         <button type="button">Грузы</button>
         <button type="button">Транспорт</button>
       </div>
-      <CargoList isCar={false} isCargo={false} />
+      <CargoList isCar={false} isCargo={false} home={true} />
       <HomeCard />
       <h3 className={styles.title}>Новости</h3>
       <HomeNews />
