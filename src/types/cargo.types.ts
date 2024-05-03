@@ -44,30 +44,6 @@ export interface ICargoList {
   status?: string
 }
 
-// create-cargo-inputs
-// export interface Dimensions {
-//   length: number
-//   width: number
-//   height: number
-//   diameter: number
-// }
-
-// export interface ICargoSize {
-//   cargoWeight: number
-//   weightType: string
-//   cargoVolume: string
-// }
-// export interface ITransportSize {
-//   transportVolume: string
-//   transportWeight: number
-//   transportWeightType: string
-// }
-
-// export interface IUploading {
-//   locality: string
-//   addressLocality: string
-//   uploadingTime: string
-// }
 export interface IUnloading {}
 export interface ICreateCargoInputs {
   cargoName: string

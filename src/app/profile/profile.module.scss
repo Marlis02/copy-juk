@@ -37,6 +37,7 @@
   .userInfoTitle {
     margin-top: 15px;
     width: 94%;
+    cursor: pointer;
     @include flexbox(space-between, center);
     p {
       font-size: 24px;
@@ -116,6 +117,7 @@
   .reviewsTitle {
     height: 60px;
     width: 95%;
+    cursor: pointer;
     @include flexbox(space-between, center);
     p {
       font-size: 24px;

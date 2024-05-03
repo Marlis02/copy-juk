@@ -1,5 +1,4 @@
 import Banner from '@/components/HomeComponents/Banner/Banner'
-// import styles from './page.module.scss'
 import styles from './page.module.scss'
 
 import CargoList from '@/components/CargoList/CargoList'

@@ -11,7 +11,6 @@ const Profile = () => {
   const [userModal, setUserModal] = useState(false)
   const [reviewsOpen, setReviewsOpen] = useState(false)
   const [userData, setUserData] = useState<IUserData | null>(null)
-  console.log(userData, 'userData')
 
   return (
     <div className={styles.con}>
